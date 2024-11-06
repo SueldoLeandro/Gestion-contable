@@ -1,4 +1,378 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 #root {
-  display: flex;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*------------------AUX CONTABLE------------------*/
+/*---------------NAV AUX CONTABLE---------------*/
+
+.Header-Aux-Contable{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.H1-Aux-Contable{
+  text-align: center;
+  background-color: rgb(206, 208, 247);
+  color: rgb(6, 6, 68);
+}
+
+.Navbar-Aux-Contable{
+  width: 100%;
+}
+
+.Ul-Aux-Contable{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Li-Aux-Contable{
+  list-style: none;
+  margin: 10px;
+}
+
+.A-Aux-Contador{
+  text-decoration: none;
+  color: black;
+}
+
+/*------------------MAIN AUX CONTABLE------------------*/
+
+.Main-Aux-Contable{
+  width: 100%;
+  min-height: 80vh;
+  text-align: center;
+}
+
+
+/*------------------CONTADOR------------------*/
+/*---------------NAV CONTADOR--------------*/
+
+.Header-Contador{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.H1-Contador{
+  text-align: center;
+  background-color: rgb(206, 208, 247);
+  color: rgb(6, 6, 68);
+}
+
+.Navbar-Contador{
+  width: 100%;
+  min-height: 50px;
+}
+
+.Ul-Contador{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Li-Contador{
+  list-style: none;
+  margin: 10px;
+  min-height: 50px;
+  border: 1px solid rgb(6, 6, 68);
+  border-radius: 10px;
+}
+
+.Li-Contador:hover{
+  background-color: rgb(206, 208, 247);
+}
+
+.A-Contador{
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+  margin: 5px;
+  line-height: 3;
+}
+
+.Li-Desplegable-Contador{
+  list-style: none;
+}
+
+.A-Desplegable-Contador{
+  text-decoration: none;
+  color: black;
+}
+
+/*------------------MAIN CONTADOR------------------*/
+
+.Main-Contador{
+  width: 100%;
+  min-height: 80vh;
+  text-align: center;
+}
+
+
+/*------------------REVISION DE ASIENTOS------------------*/
+
+
+.Contenedor-Revision-Asientos{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Tabla-Revision-Asientos{
+  width: 95%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+}
+
+.Cabecera-Tabla-Revision-Asientos{
+  background-color: rgb(206, 208, 247);
+}
+
+.Td-Tabla-Revision-Asientos{
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+
+
+/*------------------INFORMACION------------------*/
+.Contenedor-Informacion{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/*------------ACTIVO------------*/
+.Contenedor-Activo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Tabla-Activo{
+  width: 60%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+}
+
+.Cabecera-Tabla-Activo{
+  background-color: rgb(206, 208, 247);
+}
+
+.Td-Tabla-Activo{
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+/*------------PASIVO------------*/
+.Contenedor-Pasivo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Tabla-Pasivo{
+  width: 60%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+}
+
+.Cabecera-Tabla-Pasivo{
+  background-color: rgb(206, 208, 247);
+}
+
+.Td-Tabla-Pasivo{
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+/*------------PATRIMONIO NETO------------*/
+.Contenedor-PatrimonioNeto{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Tabla-Patrimonio-Neto{
+  width: 60%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+}
+
+.Cabecera-Tabla-Patrimonio-Neto{
+  background-color: rgb(206, 208, 247);
+}
+
+.Td-Tabla-Patrimonio-Neto{
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+
+
+/*------------------RESUMEN FINANCIERO------------------*/
+.Contenedor-Resumen-Financiero{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/*------------Ingresos_VS_Gastos------------*/
+.Contenedor-Ingresos-VS-Gastos{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Tabla-Ingresos-VS-Gastos{
+  width: 60%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+}
+
+.Cabecera-Tabla-Ingresos-VS-Gastos{
+  background-color: rgb(206, 208, 247);
+}
+
+.Td-Tabla-Ingresos-VS-Gastos{
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+/*------------Ingresos------------*/
+.Contenedor-Ingresos{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Tabla-Ingresos{
+  width: 60%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+}
+
+.Cabecera-Tabla-Ingresos{
+  background-color: rgb(206, 208, 247);
+}
+
+.Td-Tabla-Ingresos{
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+/*------------Gastos------------*/
+.Contenedor-Gastos{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Tabla-Gastos{
+  width: 60%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+}
+
+.Cabecera-Tabla-Gastos{
+  background-color: rgb(206, 208, 247);
+}
+
+.Td-Tabla-Gastos{
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+/*------------Flujo_De_Caja------------*/
+.Contenedor-Flujo-De-Caja{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.Tabla-Flujo-De-Caja{
+  width: 60%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+}
+
+.Cabecera-Tabla-Flujo-De-Caja{
+  background-color: rgb(206, 208, 247);
+}
+
+.Td-Tabla-Flujo-De-Caja{
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+
+/*------------------FOOTER------------------*/
+
+.Footer-Administracion{
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  background-color: rgb(206, 208, 247);
+  color: rgb(6, 6, 68);
+}
+
+.Footer-Administracion > p{
+  width: 100%;
+  text-align: center;
+  align-self: center;
 }

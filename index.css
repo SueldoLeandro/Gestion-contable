@@ -1,0 +1,85 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(100deg, rgb(109, 131, 190), rgba(119, 171, 238, 0.473));
+}
+.contenedor {
+    position: relative;
+    width: 850px;
+    height: 550px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+}
+
+.formulario {
+    position: absolute;
+    right: 0%;
+    width: 50%;
+    height: 100%;
+    background: rgb(206, 208, 247);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgb(6, 6, 68);
+}
+
+form {
+    width: 100%;
+    margin: 50;
+}
+
+.contenedor h1 {
+    font-size: 40px;
+    margin: -10px 0;
+}
+
+.input-box {
+    position: relative;
+    margin: 15px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 13px;
+    background: none;
+    border-radius: 10px;
+    border-color: aliceblue;
+    outline: none;
+    margin-top: 5;
+}
+
+.olvido-contraseña {
+    text-align: left;
+    padding-bottom: 15%;
+    margin-top: -5%;
+    font-size: 14.5;
+    color: #333;
+    text-decoration: none;
+}
+
+button {
+    background:rgb(6, 6, 68);
+    color: #fff;
+    border-radius: 8px;
+    padding: 5;
+    margin: 5;
+    position: relative;
+    right: 0%;
+    width: 30%;
+}
+
+.formulario.registro {
+    visibility: hidden;
+} */

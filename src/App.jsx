@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import FormSesion from './components/FormSesion';
-import PaginaPrincipal from './components/PaginaPrincipal';// borrar despues
 import Carga_De_Asientos from './components/Carga_De_Asientos';
 import Revision_De_Asientos from './components/Revision_De_Asientos';
 import Informacion from './components/Informacion';

@@ -23,6 +23,7 @@
     background: #fff;
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    margin: 20px;
 }
 
 .formulario{
@@ -35,6 +36,12 @@
     align-items: center;
     text-align: center;
     color: rgb(6, 6, 68);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.input-box{
+    margin: 5%;
 }
 
 /* Formulario Login */
@@ -77,8 +84,8 @@
     background: rgb(6, 6, 68);
     color: rgb(225, 226, 247);
     border-radius: 8px;
-    padding: 5;
-    margin: 5;
+    padding: 2%;
+    margin: 2%;
     margin-bottom: 20px;
     position: relative;
     right: 0%;
@@ -100,7 +107,7 @@
 }
 
 /* Formulario Registro */
-.registro-form {
+/* .registro-form {
     width: 100%;
     margin: 50;
 }
@@ -156,12 +163,28 @@
 
 .registro-redes-icono {
     margin: 0 10px;
-}
-
+} 
 .formulario.registro {
-    visibility: visible;
+    visibility: hidden;
+} */
+
+
+.toggle-panel img{
+    opacity: 70%;
+    width: 50%;
+    position: absolute;
+    margin-bottom: 65%;
 }
 
-.hola{
-    width: 100%;
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    color:rgb(6, 6, 68);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    margin-top: 7%;
 }

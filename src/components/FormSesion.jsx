@@ -62,7 +62,7 @@ function FormSesion({  formDataSesion, handleInputChange }) {
           </form>
         </div>
 
-        <div className="formulario registro">
+        {/* <div className="formulario registro">
           <form action="" className='registro-form'>
             <h1 className="registro-title">Registrarse</h1>
 
@@ -95,11 +95,13 @@ function FormSesion({  formDataSesion, handleInputChange }) {
               <a href="#"><i className="bx bxl-instagram-alt login-redes-icono"></i></a>
             </div>
           </form>
-        </div>
+        </div> */}
 
         <div className="toggle-box">
-          <div className="toggle-panel toggle-left">
-            asdasdasd
+          <div className="toggle-panel">
+            <h1> ¡Bienvenido de vuelta!</h1>
+            <p>¿Qué tenemos pendiente hoy?</p>
+            <img src="/images/login-foto.jpeg" alt="inicio"/>
           </div>
         </div>
       </div>

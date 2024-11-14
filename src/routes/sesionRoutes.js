@@ -1,5 +1,5 @@
 import express from 'express';
-import { iniciarSesion } from '../controllers/sesionController.js';
+import iniciarSesion from '../controllers/sesionController.js';
 
 const router = express.Router();
 

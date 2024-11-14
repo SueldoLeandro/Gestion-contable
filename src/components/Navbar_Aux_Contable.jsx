@@ -11,7 +11,7 @@ function Navbar_Aux_Contable() {
                     </li>
 
                     <li className='Li-Aux-Contable'>
-                        <a href="#cerrarsesion" className='A-Aux-Contador'>Cerrar sesión</a>
+                        <a href="/" className='A-Aux-Contador'>Cerrar sesión</a>
                     </li>
                 </ul>
             </nav>

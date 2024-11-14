@@ -21,7 +21,7 @@ function FormSesion({  formDataSesion, handleInputChange }) {
           const data = await response.json();
           if (response.ok) {
             alert(data.mensaje);
-            navigate('/#');
+            navigate('/Carga-De-Asientos');
           } else {
             alert(data.mensaje);
           }
@@ -29,6 +29,8 @@ function FormSesion({  formDataSesion, handleInputChange }) {
           console.error('Error en el inicio de sesión:', error);
         }
       };
+
+      
 
   return (
     <div className='contenedor-principal'>
@@ -61,42 +63,6 @@ function FormSesion({  formDataSesion, handleInputChange }) {
             </div>
           </form>
         </div>
-
-        <div className="formulario registro">
-          <form action="" className='registro-form'>
-            <h1 className="registro-title">Registrarse</h1>
-
-            <div className="input-box">
-              <i className="bx bxs-user-circle"></i>
-              <input className="registro-input" type="text" placeholder="Usuario" required />
-            </div>
-
-            <div className="input-box">
-              <i className="bx bxs-envelope"></i>
-              <input className="registro-input" type="email" placeholder="Email" required />
-            </div>
-
-            <div className="input-box">
-              <i className="bx bxs-lock-alt"></i>
-              <input className="registro-input" type="password" placeholder="Contraseña" required />
-            </div>
-
-            <div className="cuenta-con-una-cuenta">
-              <p>¿Ya tienes una cuenta? <a href="#">Inicia sesión</a></p>
-            </div>
-
-
-            <button type="submit" className="registro-boton">Crear cuenta</button>
-            <p className="registro-p">o accede con</p>
-
-            <div className="registro-redes-iconos">
-              <a href="#"><i className="bx bxl-google login-redes-icono"></i></a>
-              <a href="#"><i className="bx bxl-facebook-circle login-redes-icono"></i></a>
-              <a href="#"><i className="bx bxl-instagram-alt login-redes-icono"></i></a>
-            </div>
-          </form>
-        </div>
-
         <div className="toggle-box">
           <div className="toggle-panel toggle-left">
             asdasdasd

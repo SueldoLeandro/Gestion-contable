@@ -18,7 +18,7 @@ function Pasivo() {
     }, []);
 
     return (
-        <table className='Tabla-Pasivo'>
+        <table className='Tabla-Info'>
             <thead className='Cabecera-Tabla-Pasivo'>
                 <tr className='Tr-Tabla-Pasivo'>
                     <th className='Th-Tabla-Pasivo'>Pasivos</th>

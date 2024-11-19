@@ -18,7 +18,7 @@ function PatrimonioNeto() {
     }, []);
 
     return (
-        <table className='Tabla-Patrimonio-Neto'>
+        <table className='Tabla-Info'>
             <thead className='Cabecera-Tabla-Patrimonio-Neto'>
                 <tr className='Tr-Tabla-Patrimonio-Neto'>
                     <th className='Th-Tabla-Patrimonio-Neto'>Patrimonio Neto</th>

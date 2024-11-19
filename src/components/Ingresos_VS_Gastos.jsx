@@ -1,9 +1,9 @@
-{/*import React from 'react';
+import React from 'react';
 
 function Ingresos_VS_Gastos({ resultados }) {
     return (
 
-        <table className='Tabla-Ingresos-VS-Gastos'>
+        <table className='Tabla-Info'>
             <thead className='Cabecera-Tabla-Ingresos-VS-Gastos'>
                 <tr className='Tr-Tabla-Ingresos-VS-Gastos'>
                     <th className='Th-Tabla-Ingresos-VS-Gastos'>Concepto</th>
@@ -25,7 +25,14 @@ function Ingresos_VS_Gastos({ resultados }) {
                 </tr>
             </tbody>
         </table>
-*/}
+
+    );
+}
+
+export default Ingresos_VS_Gastos;
+
+
+{/*
 import React from 'react';
 
 function Ingresos_VS_Gastos({ resultados }) {
@@ -51,8 +58,4 @@ function Ingresos_VS_Gastos({ resultados }) {
                             <td className='Td-Tabla-Ingresos-VS-Gastos'>$ 30.000</td>
                         </tr>
                     </tbody>
-                </table>
-    );
-}
-
-export default Ingresos_VS_Gastos;
+                </table>*/}

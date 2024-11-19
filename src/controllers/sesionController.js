@@ -8,11 +8,10 @@
       res.status(401).json({ mensaje: 'Datos incorrectos' });
     }
   };*/
-  
   import bcrypt from 'bcryptjs';
 import Usuario from '../models/Usuario.js';
 
-  const iniciarSesion = async (req, res) => {
+const iniciarSesion = async (req, res) => {
     try {
       const { usuario, password } = req.body;
   
@@ -28,12 +27,12 @@ import Usuario from '../models/Usuario.js';
       if (!passwordCorrecta) {
         return res.status(401).json({ mensaje: 'Contraseña incorrecta' });
       }
-  
-      res.status(200).json({ mensaje: 'Inicio de sesión exitoso', usuario: usuarioExistente });
+      
+      res.status(200).json({ mensaje: 'Inicio de sesión exitoso', usuario: { tipo: usuarioExistente.profesion, usuario } });
     } catch (error) {
       console.error('Error en el inicio de sesión:', error);
       res.status(500).json({ mensaje: 'Error al iniciar sesión' });
     }
   };
 
-  export default iniciarSesion;
+export default iniciarSesion;

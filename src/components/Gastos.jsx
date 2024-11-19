@@ -1,9 +1,9 @@
-{/*import React from 'react';
+import React from 'react';
 
 function Gastos({ resultados }) {
     return (
 
-        <table className='Tabla-Gastos'>
+        <table className='Tabla-Info'>
             <thead className='Cabecera-Tabla-Gastos'>
                 <tr className='Tr-Tabla-Gastos'>
                     <th className='Th-Tabla-Gastos'>Tipo de Gasto</th>
@@ -53,7 +53,14 @@ function Gastos({ resultados }) {
                 </tr>
             </tbody>
         </table>
-*/}
+
+    );
+}
+
+export default Gastos;
+
+
+{/*
 import React from 'react';
 
 function Gastos({ resultados }) {
@@ -87,8 +94,4 @@ function Gastos({ resultados }) {
                     <td className='Td-Tabla-Gastos'>$ 70.000</td>
                 </tr>
             </tbody>
-        </table>
-    );
-}
-
-export default Gastos;
+        </table>*/}

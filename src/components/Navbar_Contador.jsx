@@ -19,6 +19,10 @@ function Navbar_Contador({ onNavClick }) {
                     </li>
 
                     <li className='Li-Contador'>
+                        <a href="./registro" className='A-Contador'>Registro</a>
+                    </li>
+
+                    <li className='Li-Contador'>
                         <a href="/" className='A-Contador'>Cerrar sesión</a>
                     </li>
                 </ul>

@@ -19,13 +19,13 @@ function Revision_De_Asientos() {
                 debe: asiento.cuentas_debitadas
                     ? asiento.cuentas_debitadas.split(',').map((nombre, index) => ({
                         nombre_cuenta: nombre,
-                        monto: asiento.montos_debe.split(',')[index]
+                        monto: parseFloat(asiento.montos_debe.split(',')[index]).toFixed(2) // Aquí aplicamos toFixed(2)
                     }))
                     : [],
                 haber: asiento.cuentas_acreditadas
                     ? asiento.cuentas_acreditadas.split(',').map((nombre, index) => ({
                         nombre_cuenta: nombre,
-                        monto: asiento.montos_haber.split(',')[index]
+                        monto: parseFloat(asiento.montos_haber.split(',')[index]).toFixed(2) // Aquí aplicamos toFixed(2)
                     }))
                     : []
             }));

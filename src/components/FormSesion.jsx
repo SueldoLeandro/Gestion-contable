@@ -2,8 +2,7 @@ import React from 'react';
 import './sesion.css';
 import { useNavigate } from 'react-router-dom';
 
-function FormSesion({  formDataSesion, handleInputChange }) {
-
+function FormSesion({ formDataSesion, handleInputChange }) {
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -21,7 +20,12 @@ function FormSesion({  formDataSesion, handleInputChange }) {
           const data = await response.json();
           if (response.ok) {
             alert(data.mensaje);
-            navigate('/Carga-De-Asientos');
+            // Redireccionar según el tipo de usuario
+            if (data.usuario.tipo === 'auxiliar_contable') {
+                navigate('/Carga-De-Asientos');
+            } else if (data.usuario.tipo === 'contador') {
+                navigate('/Revision-De-Asientos');
+            }
           } else {
             alert(data.mensaje);
           }
@@ -29,8 +33,6 @@ function FormSesion({  formDataSesion, handleInputChange }) {
           console.error('Error en el inicio de sesión:', error);
         }
       };
-
-      
 
   return (
     <div className='contenedor-principal'>

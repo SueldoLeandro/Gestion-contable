@@ -7,7 +7,7 @@ function Navbar_Aux_Contable() {
             <nav className='Navbar-Aux-Contable'>
                 <ul className='Ul-Aux-Contable'>
                     <li className='Li-Aux-Contable'>
-                        <a href="#cargarasiento" className='A-Aux-Contador'>Cargar asiento</a>
+                        <a href="Carga-De-Asientos" className='A-Aux-Contador'>Cargar asiento</a>
                         <a href="/" className='A-Aux-Contador'>Cerrar sesión</a>
                     </li>
                 </ul>

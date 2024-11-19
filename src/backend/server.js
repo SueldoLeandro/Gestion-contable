@@ -9,6 +9,8 @@ import resultadosRoutes from '../routes/resultados.js';
 import flujoCajaRoutes from '../routes/flujoCaja.js';
 import registroRoutes from '../routes/registroRoutes.js';
 import revisionAsientosRoutes from '../routes/revisionAsientosRoutes.js';
+import balances from '../routes/balances.js';
+import resultados from '../routes/resultados.js';
 
 const app = express();
 app.use(express.json());
@@ -26,6 +28,8 @@ app.use('/balances', balancesRoutes);
 app.use('/resultados', resultadosRoutes);
 app.use('/flujoCaja', flujoCajaRoutes);
 app.use('/api/asientos', revisionAsientosRoutes);
+app.use('/api/calcularBalances', balances);
+app.use('/calcularResultados', resultados);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Activo() {
+    const [activos, setActivos] = useState(null);
+
+    useEffect(() => {
+        const fetchActivos = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/calcularBalances');
+                const data = await response.json();
+                setActivos(data.activos);
+            } catch (error) {
+                console.error('Error al obtener los activos:', error);
+            }
+        };
+
+        fetchActivos();
+    }, []);
+
     return (
         <table className='Tabla-Activo'>
             <thead className='Cabecera-Tabla-Activo'>
@@ -11,34 +27,10 @@ function Activo() {
             </thead>
             <tbody>
                 <tr className='Tr-Tabla-Activo'>
-                    <th className='Th-Tabla-Activo'>Activo Corriente</th>
-                </tr>
-                <tr className='Tr-Tabla-Activo'>
-                    <td className='Td-Tabla-Activo'>Efectivo y equivalentes</td>
-                    <td className='Td-Tabla-Activo'>$ xx.xxx</td>
-                </tr>
-                <tr className='Tr-Tabla-Activo'>
-                    <td className='Td-Tabla-Activo'>Cuentas por cobrar</td>
-                    <td className='Td-Tabla-Activo'>$ xx.xxx</td>
-                </tr>
-                <tr className='Tr-Tabla-Activo'>
-                    <td className='Td-Tabla-Activo'>Inventarios</td>
-                    <td className='Td-Tabla-Activo'>$ xx.xxx</td>
-                </tr>
-                <tr className='Tr-Tabla-Activo'>
-                    <th className='Th-Tabla-Activo'>Activos No Corriente</th>
-                </tr>
-                <tr className='Tr-Tabla-Activo'>
-                    <td className='Td-Tabla-Activo'>Propiedades, planta y equipo</td>
-                    <td className='Td-Tabla-Activo'>$ xx.xxx</td>
-                </tr>
-                <tr className='Tr-Tabla-Activo'>
-                    <td className='Td-Tabla-Activo'>inversiones a largo plazo</td>
-                    <td className='Td-Tabla-Activo'>$ xx.xxx</td>
-                </tr>
-                <tr className='Tr-Tabla-Activo'>
                     <td className='Td-Tabla-Activo'>Total Activos</td>
-                    <td className='Td-Tabla-Activo'>$ xx.xxx</td>
+                    <td className='Td-Tabla-Activo'>
+                        {activos !== null && activos !== undefined ? `$ ${activos.toFixed(2)}` : 'Cargando...'}
+                    </td>
                 </tr>
             </tbody>
         </table>

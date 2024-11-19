@@ -5,6 +5,14 @@ import { Sequelize } from 'sequelize';
 const db = new Sequelize('portalcontable', 'root', '', {
   host: 'localhost',
   dialect: 'mariadb',
+  dialectOptions: {
+    multipleStatements: true,
+  },
+  logging: false, // Opcional: para desactivar logs en consola
+  define: {
+    freezeTableName: true, // Evita pluralización automática
+    timestamps: false, // Desactiva las columnas createdAt/updatedAt
+  },
 });
 
 export default db;

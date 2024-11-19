@@ -3,6 +3,11 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../backend/db.js';
 
 const Cuenta = sequelize.define('Cuenta', {
+  ID_cuenta: { 
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+},
   nombre: {
     type: DataTypes.STRING,
     allowNull: false,

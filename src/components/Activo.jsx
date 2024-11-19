@@ -2,7 +2,7 @@ import React from 'react';
 
 function Activo() {
     return (
-        <table className='Tabla-Activo'>
+        <table className='Tabla-Info'>
             <thead className='Cabecera-Tabla-Activo'>
                 <tr className='Tr-Tabla-Activo'>
                     <th className='Th-Tabla-Activo'>Activos</th>

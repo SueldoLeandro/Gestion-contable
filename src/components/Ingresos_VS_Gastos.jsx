@@ -2,7 +2,7 @@ import React from 'react';
 
 function Ingresos_VS_Gastos() {
     return (
-<table className='Tabla-Ingresos-VS-Gastos'>
+<table className='Tabla-Info'>
                     <thead className='Cabecera-Tabla-Ingresos-VS-Gastos'>
                         <tr className='Tr-Tabla-Ingresos-VS-Gastos'>
                             <th className='Th-Tabla-Ingresos-VS-Gastos'>Concepto</th>

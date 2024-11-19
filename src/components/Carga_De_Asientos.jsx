@@ -189,13 +189,16 @@ function Carga_De_Asientos() {
                       <option value="prestamo bancario">Préstamo bancario</option>
                     </select>
                   ))}
+                  
+                </div>
+                <div className='botones-debe'>
                   <button type="button" className='buttonDebe' onClick={() => addInput(cuentasDebe, setCuentasDebe)}>
-                    Agregar Cuenta
+                    Añadir
                   </button>
                   <button type="button" className='buttonDebe' onClick={() => removeInput(cuentasDebe, setCuentasDebe)}>
-                    &times;
+                    Borrar
                   </button>
-                </div>
+                  </div>
 
                 <div className="operacionesHaber">
                   {cuentasHaber.map((cuenta, index) => (
@@ -216,13 +219,17 @@ function Carga_De_Asientos() {
                       <option value="prestamo bancario">Préstamo bancario</option>
                     </select>
                   ))}
+                </div>
+
+                <div className='botones-haber'>
                   <button type="button" className='buttonHaber' onClick={() => addInput(cuentasHaber, setCuentasHaber)}>
-                    Agregar Cuenta
+                    Añadir
                   </button>
                   <button type="button" className='buttonHaber' onClick={() => removeInput(cuentasHaber, setCuentasHaber)}>
-                    &times;
+                    Borrar
                   </button>
-                </div>
+                  </div>
+
               </div>
 
               <div className="contenedor-valores">
@@ -239,12 +246,14 @@ function Carga_De_Asientos() {
                       className="input-form-debe"
                     />
                   ))}
+                  <div className='botones-debe'>
                   <button type="button" className='buttonDebe' onClick={() => addInput(montosDebe, setMontosDebe)}>
-                    Agregar Monto
+                    Añadir
                   </button>
                   <button type="button" className='buttonDebe' onClick={() => removeInput(montosDebe, setMontosDebe)}>
-                    &times;
+                    Borrar
                   </button>
+                  </div>
                 </div>
 
                 <div className="operacionesHaber">
@@ -260,13 +269,17 @@ function Carga_De_Asientos() {
                       className="input-form-haber"
                     />
                   ))}
+                </div>
+
+                <div className='botones-haber'>
                   <button type="button" className='buttonHaber' onClick={() => addInput(montosHaber, setMontosHaber)}>
-                    Agregar Monto
+                    Añadir
                   </button>
                   <button type="button" className='buttonHaber' onClick={() => removeInput(montosHaber, setMontosHaber)}>
-                    &times;
+                    Borrar
                   </button>
-                </div>
+                  </div>
+
               </div>
             </div>
 

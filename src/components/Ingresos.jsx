@@ -2,7 +2,7 @@ import React from 'react';
 
 function Ingresos() {
     return (
-<table className='Tabla-Ingresos'>
+<table className='Tabla-Info'>
                     <thead className='Cabecera-Tabla-Ingresos'>
                         <tr className='Tr-Tabla-Ingresos'>
                             <th className='Th-Tabla-Ingresos'>Fuente de Ingreso</th>

@@ -12,7 +12,6 @@ function Navbar_Contador({ onNavClick }) {
 
                     <li className='Li-Contador'>
                         <a href="./Informacion" className='A-Contador'>Información:Activo/Pasivo/Patrimonio neto</a>
-                        
                     </li>
 
                     <li className='Li-Contador'>

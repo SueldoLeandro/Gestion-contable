@@ -2,7 +2,7 @@ import React from 'react';
 
 function Flujo_De_Caja() {
     return (
-        <table className='Tabla-Flujo-De-Caja'>
+        <table className='Tabla-Info'>
             <thead className='Cabecera-Tabla-Flujo-De-Caja'>
                 <tr className='Tr-Tabla-Flujo-De-Caja'>
                     <th className='Th-Tabla-Flujo-De-Caja'>Tipo de flujo</th>

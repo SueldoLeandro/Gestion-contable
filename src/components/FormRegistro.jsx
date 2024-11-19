@@ -87,10 +87,12 @@ return (
             </div>
           </form>
         </div>
-
         <div className="toggle-box">
-          <div className="toggle-panel toggle-left">
-            asdasdasd
+          <div className="toggle-panel">
+            <h1> ¡Bienvenido de vuelta!</h1>
+            <p>¿Qué tenemos pendiente hoy?</p>
+            <img src="/images/login-foto.jpeg" alt="inicio"/>
+
           </div>
         </div>
       </div>

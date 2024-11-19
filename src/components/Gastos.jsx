@@ -2,7 +2,7 @@ import React from 'react';
 
 function Gastos() {
     return (
-<table className='Tabla-Gastos'>
+<table className='Tabla-Info'>
                     <thead className='Cabecera-Tabla-Gastos'>
                         <tr className='Tr-Tabla-Gastos'>
                             <th className='Th-Tabla-Gastos'>Tipo de Gasto</th>

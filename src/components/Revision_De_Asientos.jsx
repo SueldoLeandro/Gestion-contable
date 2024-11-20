@@ -5,32 +5,46 @@ import Footer from './Footer';
 function Revision_De_Asientos() {
     const [asientos, setAsientos] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [subtotalDebe, setSubtotalDebe] = useState(0);
+    const [subtotalHaber, setSubtotalHaber] = useState(0);
 
     const fetchAsientos = async () => {
         try {
             const response = await fetch('http://localhost:5000/api/asientos');
             if (!response.ok) throw new Error('Error en la solicitud al servidor');
             const data = await response.json();
-            console.log('Respuesta del servidor:', data); // Verifica cómo es la respuesta
+            console.log('Respuesta del servidor:', data);
 
-            // Procesa los datos recibidos
             const processedData = data.map(asiento => ({
                 ...asiento,
                 debe: asiento.cuentas_debitadas
                     ? asiento.cuentas_debitadas.split(',').map((nombre, index) => ({
                         nombre_cuenta: nombre,
-                        monto: parseFloat(asiento.montos_debe.split(',')[index]).toFixed(2) // Aquí aplicamos toFixed(2)
+                        monto: parseFloat(asiento.montos_debe.split(',')[index]).toFixed(2)
                     }))
                     : [],
                 haber: asiento.cuentas_acreditadas
                     ? asiento.cuentas_acreditadas.split(',').map((nombre, index) => ({
                         nombre_cuenta: nombre,
-                        monto: parseFloat(asiento.montos_haber.split(',')[index]).toFixed(2) // Aquí aplicamos toFixed(2)
+                        monto: parseFloat(asiento.montos_haber.split(',')[index]).toFixed(2)
                     }))
                     : []
             }));
 
             setAsientos(processedData);
+
+            // Calcular subtotales
+            const totalDebe = processedData.reduce((acc, asiento) => {
+                return acc + asiento.debe.reduce((subAcc, item) => subAcc + parseFloat(item.monto), 0);
+            }, 0);
+
+            const totalHaber = processedData.reduce((acc, asiento) => {
+                return acc + asiento.haber.reduce((subAcc, item) => subAcc + parseFloat(item.monto), 0);
+            }, 0);
+
+            setSubtotalDebe(totalDebe.toFixed(2));
+            setSubtotalHaber(totalHaber.toFixed(2));
+
         } catch (error) {
             console.error("Error al cargar los asientos:", error);
             setAsientos([]);
@@ -97,8 +111,8 @@ function Revision_De_Asientos() {
                         </table>
 
                         <div className='subtotales'>
-                            <p>Subtotal debe:  </p>
-                            <p>Subtotal haber: </p>
+                            <p>Subtotal debe: ${subtotalDebe}</p>
+                            <p>Subtotal haber: ${subtotalHaber}</p>
                         </div>
                         </>
                     ) : (

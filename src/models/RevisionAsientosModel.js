@@ -14,7 +14,7 @@ const obtenerAsientos = async () => {
             LEFT JOIN detalle_asiento AS DA ON AC.ID_asiento = DA.asiento_id
             LEFT JOIN cuentas AS C ON DA.cuenta_id = C.ID_cuenta
             GROUP BY AC.ID_asiento
-            ORDER BY AC.ID_asiento;
+            ORDER BY AC.ID_asiento DESC;
             `,
             { type: db.Sequelize.QueryTypes.SELECT, raw: true }
         );

@@ -75,6 +75,7 @@
   text-align: center;
   background-color: rgb(206, 208, 247);
   color: rgb(6, 6, 68);
+  margin-top: 2%;
 }
 
 .Navbar-Contador{
@@ -165,6 +166,8 @@
   justify-content: center;
   align-items: center;
   margin-top: 7%;
+  flex-direction: column;
+
 }
 
 .Tabla-Revision-Asientos{
@@ -186,7 +189,15 @@
   padding: 7px;
 }
 
-
+.subtotales {
+  width: 20%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+  margin-top: 2%;
+}
 
 /*------------------INFORMACION------------------*/
 .Contenedor-Informacion{

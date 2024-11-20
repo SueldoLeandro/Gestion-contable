@@ -65,15 +65,14 @@ return (
               <input className="registro-input" type="password" name="password" placeholder="Contraseña" value={formDataRegistro.password} onChange={handleRegisterInputChange} required />
             </div>
 
-            <div className="input-box">
-              <i className="bx bxs-user-circle"></i>
+            <div className="input-tipo">
               <label><input className="registro-input" type="radio" name='profesion' value="auxiliar_contable"  onChange={handleRegisterInputChange} required />Auxiliar contable</label>
               <label><input className="registro-input" type="radio" name='profesion' value="contador"  onChange={handleRegisterInputChange} required />Contador</label>
             </div>
 
 
             <div className="cuenta-con-una-cuenta">
-              <p>¿Ya tienes una cuenta? <a href="#">Inicia sesión</a></p>
+              <p>¿Ya tienes una cuenta? <a href="/">Inicia sesión</a></p>
             </div>
 
 
@@ -89,8 +88,8 @@ return (
         </div>
         <div className="toggle-box">
           <div className="toggle-panel">
-            <h1> ¡Bienvenido de vuelta!</h1>
-            <p>¿Qué tenemos pendiente hoy?</p>
+            <h1> ¡Bienvenido nuevo usuario!</h1>
+            <p>Comienza ya a planificar.</p>
             <img src="/images/portal.png" alt="inicio"/>
 
           </div>

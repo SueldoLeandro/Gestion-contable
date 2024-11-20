@@ -51,6 +51,7 @@ function Revision_De_Asientos() {
                     {loading ? (
                         <p>Cargando asientos...</p>
                     ) : asientos.length > 0 ? (
+                        <>
                         <table className='Tabla-Revision-Asientos'>
                             <thead className='Cabecera-Tabla-Revision-Asientos'>
                                 <tr className='Tr-Tabla-Revision-Asientos'>
@@ -63,6 +64,7 @@ function Revision_De_Asientos() {
                                     <th className='Th-Tabla-Revision-Asientos'>Haber</th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 {asientos.map(asiento => (
                                     <tr className='Tr-Tabla-Revision-Asientos' key={asiento.ID_asiento}>
@@ -93,6 +95,12 @@ function Revision_De_Asientos() {
                                 ))}
                             </tbody>
                         </table>
+
+                        <div className='subtotales'>
+                            <p>Subtotal debe:  </p>
+                            <p>Subtotal haber: </p>
+                        </div>
+                        </>
                     ) : (
                         <p>No hay asientos disponibles para mostrar</p>
                     )}

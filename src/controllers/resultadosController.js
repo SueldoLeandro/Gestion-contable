@@ -44,7 +44,7 @@ const resultadosController = {
 
       const totalGastos = calcularMonto(gastos);
       console.log('Total Gastos (sin filtros):', totalGastos);  // Verifica el resultado total de gastos
-
+/*
       // Calcular Flujo Operativo (sin filtro de nombre de cuenta)
       const flujoOperativo = await DetalleAsiento.findAll({
         include: {
@@ -87,16 +87,50 @@ const resultadosController = {
       // Calcular total flujo de caja
       const totalFlujoCaja = flujoCajaOperativo + flujoCajaFinanciero + flujoCajaInversion;
       console.log('Total Flujo de Caja (sin filtros):', totalFlujoCaja);  // Verifica el total del flujo de caja
+*/
 
+// Función para calcular sumas basadas en el nombre de la cuenta
+const calcularSumaPorCuenta = async (nombreCuenta) => {
+  const resultado = await DetalleAsiento.findAll({
+    include: {
+      model: Cuenta,
+      where: { nombre: nombreCuenta },
+    },
+    attributes: [[DetalleAsiento.sequelize.fn('sum', DetalleAsiento.sequelize.col('monto')), 'total']],
+  });
+  return parseFloat(resultado[0]?.dataValues.total || 0);
+};
+
+// Cálculos de variables específicas
+const ventaProductos = await calcularSumaPorCuenta('cuentas por cobrar');
+const serviciosPrestados = await calcularSumaPorCuenta('CPC servicios');
+const otrosIngresos = await calcularSumaPorCuenta('inversiones CP');
+const costosBienesVendidos = await calcularSumaPorCuenta('inventario');
+const sueldosSalarios = await calcularSumaPorCuenta('salarios por pagar');
+const gastosOperativos = await calcularSumaPorCuenta('proveedores');
+const otrosGastos = await calcularSumaPorCuenta('prov gastos');
+const flujoOperativo = await calcularSumaPorCuenta('proveedores');
+const flujoInversion = await calcularSumaPorCuenta('inversiones CP');
+const flujoFinanciero = await calcularSumaPorCuenta('prestamo bancario');
       // Enviar los resultados al frontend
       res.json({
         ingresos: totalIngresos,
         gastos: totalGastos,
         beneficioNeto: totalIngresos + totalGastos,
-        flujoOperativo: flujoCajaOperativo,
+       /* flujoOperativo: flujoCajaOperativo,
         flujoInversion: flujoCajaInversion,
-        flujoFinanciero: flujoCajaFinanciero,
-        totalFlujoCaja: totalFlujoCaja
+        flujoFinanciero: flujoCajaFinanciero,*/
+        totalFlujoCaja: 0,
+        ventaProductos:ventaProductos,
+        serviciosPrestados:serviciosPrestados,
+        otrosIngresos:otrosIngresos,
+        costosBienesVendidos:costosBienesVendidos,
+        sueldosSalarios:sueldosSalarios,
+        gastosOperativos:gastosOperativos,
+        otrosGastos:otrosGastos,
+        flujoOperativo:flujoOperativo,
+        flujoInversion:flujoInversion,
+        flujoFinanciero:flujoFinanciero,
       });
       
     } catch (error) {

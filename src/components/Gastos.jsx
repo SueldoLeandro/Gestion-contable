@@ -16,7 +16,7 @@ function Gastos({ resultados }) {
                         Costo de bienes vendidos
                     </td>
                     <td className='Td-Tabla-Gastos'>
-                        ${(resultados.gastos * 0.4).toLocaleString()}
+                        ${(resultados.costosBienesVendidos).toLocaleString()}
                     </td>
                 </tr>
                 <tr className='Tr-Tabla-Gastos'>
@@ -24,7 +24,7 @@ function Gastos({ resultados }) {
                         Sueldos y salarios
                     </td>
                     <td className='Td-Tabla-Gastos'>
-                        ${(resultados.gastos * 0.3).toLocaleString()}
+                        ${(resultados.sueldosSalarios).toLocaleString()}
                     </td>
                 </tr>
                 <tr className='Tr-Tabla-Gastos'>
@@ -32,25 +32,17 @@ function Gastos({ resultados }) {
                         Gastos operativos
                     </td>
                     <td className='Td-Tabla-Gastos'>
-                        ${(resultados.gastos * 0.2).toLocaleString()}
+                        ${(resultados.gastosOperativos).toLocaleString()}
                     </td>
-                </tr>
+                </tr>{/*
                 <tr className='Tr-Tabla-Gastos'>
                     <td className='Td-Tabla-Gastos'>
                         Otros gastos
                     </td>
                     <td className='Td-Tabla-Gastos'>
-                        ${(resultados.gastos * 0.1).toLocaleString()}
+                        ${(resultados.otrosGastos).toLocaleString()}
                     </td>
-                </tr>
-                <tr className='Tr-Tabla-Gastos'>
-                    <td className='Td-Tabla-Gastos'>
-                        Total gastos
-                    </td>
-                    <td className='Td-Tabla-Gastos'>
-                        {resultados.gastos.toLocaleString()}
-                    </td>
-                </tr>
+                </tr>*/}
             </tbody>
         </table>
 

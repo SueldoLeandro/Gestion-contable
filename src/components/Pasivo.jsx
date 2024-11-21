@@ -29,7 +29,7 @@ function Pasivo() {
                 <tr className='Tr-Tabla-Pasivo'>
                     <td className='Td-Tabla-Pasivo'>Total Pasivos</td>
                     <td className='Td-Tabla-Pasivo'>
-                        {pasivos !== null && pasivos !== undefined ? `$ ${pasivos.toFixed(2)}` : 'Cargando...'}
+                        {pasivos !== null && pasivos !== undefined ? `$ ${(-1*pasivos).toFixed(2)}` : 'Cargando...'}
                     </td>
                 </tr>
             </tbody>

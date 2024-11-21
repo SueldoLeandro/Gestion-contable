@@ -32,6 +32,18 @@ const asientoController = {
           case 'prestamo bancario':
             cuenta_id = 6;
             break;
+          case 'cuentas por cobrar':
+            cuenta_id = 7;
+            break;
+          case 'CPC servicios':
+            cuenta_id = 8;
+            break;
+          case 'inversiones CP':
+            cuenta_id = 9;
+            break;
+          case 'prov gastos':
+            cuenta_id = 10;
+            break;
 
           default:
             break;

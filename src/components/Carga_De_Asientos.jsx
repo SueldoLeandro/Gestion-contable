@@ -1,68 +1,3 @@
-/*import React from 'react';
-import { useState } from 'react';
-import Navbar_Aux_Contable from './Navbar_Aux_Contable';
-import Footer from './Footer';
-
-function Carga_De_Asientos() {
-
-
-    return (
-        <>
-            <Navbar_Aux_Contable />
-            <main className='Main-Aux-Contable'>
-                <section className='Contenedor-Formulario-Carga-Asientos'>
-                    <h2 className='H2-Form-Carga-Asientos'>Carga de Asientos</h2>
-                    <form className="form-carga-asiento">
-                        <div className="form-seccion1">
-                            <div className="contenedor-fecha">
-                                <input type="text" placeholder="FECHA" className="input-form-fecha" />
-                                <input type="text" placeholder="REFERENCIA" className="input-form-referencia" />
-                            </div>
-
-                            <div className="contenedor-operaciones">
-                                <div className="operacionesDebe">
-
-                                    <input type="text" placeholder="CUENTA" className="input-form-debe" />
-
-                                    <button type="button" className="buttonDebe">Agregar Cuenta</button>
-                                </div>
-                                <div className="operacionesHaber">
-
-                                    <input type="text" placeholder="CUENTA" className="input-form-haber" />
-
-                                    <button type="button" className="buttonHaber">Agregar Cuenta</button>
-                                </div>
-                            </div>
-
-                            <div className="contenedor-valores">
-                                <div className="operacionesDebe">
-
-                                    <input type="text" placeholder="MONTO" className="input-form-debe" />
-
-                                    <button type="button" className="buttonDebe">Agregar Monto</button>
-                                </div>
-                                <div className="operacionesHaber">
-
-                                    <input type="text" placeholder="MONTO" className="input-form-haber" />
-
-                                    <button type="button" className="buttonHaber">Agregar Monto</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-seccion2">
-                            <button className="buttonGuardar">Guardar</button>
-                            <button className="buttonLimpiar">Limpiar</button>
-                        </div>
-                    </form>
-                </section>
-            </main>
-            <Footer />
-        </>
-    );
-}
-
-export default Carga_De_Asientos;*/
-
 import React, { useState } from 'react';
 import Navbar_Aux_Contable from './Navbar_Aux_Contable';
 import Footer from './Footer';
@@ -184,9 +119,13 @@ function Carga_De_Asientos() {
                       <option value="caja">Caja</option>
                       <option value="banco CC">Banco</option>
                       <option value="inventario">Inventario</option>
+                      <option value="cuentas por cobrar">Cuentas por cobrar</option>
+                      <option value="CPC servicios">CPC servicios</option>
+                      <option value="inversiones CP">Inversiones CP</option>
                       <option value="proveedores">Proveedores</option>
                       <option value="salarios por pagar">Salarios por pagar</option>
-                      <option value="prestamo bancario">Préstamo bancario</option>
+                      <option value="prestamo bancario">Préstamo bancario</option>{/*
+                      <option value="prov gastos">Prov. gastos</option>*/}
                     </select>
                   ))}
                   
@@ -214,9 +153,13 @@ function Carga_De_Asientos() {
                       <option value="caja">Caja</option>
                       <option value="banco CC">Banco</option>
                       <option value="inventario">Inventario</option>
+                      <option value="cuentas por cobrar">Cuentas por cobrar</option>
+                      <option value="CPC servicios">CPC servicios</option>
+                      <option value="inversiones CP">Inversiones CP</option>
                       <option value="proveedores">Proveedores</option>
                       <option value="salarios por pagar">Salarios por pagar</option>
-                      <option value="prestamo bancario">Préstamo bancario</option>
+                      <option value="prestamo bancario">Préstamo bancario</option>{/*
+                      <option value="prov gastos">Prov. gastos</option>*/}
                     </select>
                   ))}
                 </div>

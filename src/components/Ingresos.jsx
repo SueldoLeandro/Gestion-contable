@@ -12,15 +12,15 @@ function Ingresos({ resultados }) {
             <tbody>
                 <tr className='Tr-Tabla-Ingresos'>
                     <td className='Td-Tabla-Ingresos'>Ventas de productos</td>
-                    <td className='Td-Tabla-Ingresos'>${(resultados.ingresos * 0.6).toLocaleString()}</td>
+                    <td className='Td-Tabla-Ingresos'>${(resultados.ventaProductos).toLocaleString()}</td>
                 </tr>
                 <tr className='Tr-Tabla-Ingresos'>
                     <td className='Td-Tabla-Ingresos'>Servicios prestados</td>
-                    <td className='Td-Tabla-Ingresos'>${(resultados.ingresos * 0.3).toLocaleString()}</td>
+                    <td className='Td-Tabla-Ingresos'>${(resultados.serviciosPrestados).toLocaleString()}</td>
                 </tr>
                 <tr className='Tr-Tabla-Ingresos'>
                     <td className='Td-Tabla-Ingresos'>Otros ingresos</td>
-                    <td className='Td-Tabla-Ingresos'>${(resultados.ingresos * 0.1).toLocaleString()}</td>
+                    <td className='Td-Tabla-Ingresos'>${(resultados.otrosIngresos).toLocaleString()}</td>
                 </tr>
             </tbody>
         </table>

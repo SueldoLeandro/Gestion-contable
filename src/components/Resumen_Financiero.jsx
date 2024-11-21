@@ -10,11 +10,21 @@ function Resumen_Financiero() {
     const [resultados, setResultados] = useState({
         ingresos: 0,
         gastos: 0,
-        beneficioNeto: 0,
+        beneficioNeto: 0,/*
         flujoOperativo: 0,
         flujoInversion: 0,
-        flujoFinanciero: 0,
-        totalFlujoCaja: 0
+        flujoFinanciero: 0,*/
+        totalFlujoCaja: 0,
+        ventaProductos: 0,
+        serviciosPrestados: 0,
+        otrosIngresos: 0,
+        costosBienesVendidos: 0,
+        sueldosSalarios: 0,
+        gastosOperativos: 0,
+        otrosGastos: 0,
+        flujoOperativo: 0,
+        flujoInversion: 0,
+        flujoFinanciero: 0
     });
 
     useEffect(() => {
@@ -35,10 +45,10 @@ function Resumen_Financiero() {
         <>
             <Navbar_Contador />
             <main className='Main-Contador'>
-                <section className='Contenedor-Resumen-Financiero'>
+                <section className='Contenedor-Resumen-Financiero'>{/* 
                     <section className='Contenedor-Ingresos-VS-Gastos'>
                         <Ingresos_VS_Gastos resultados={resultados} />
-                    </section>
+                    </section>*/}
                     <section className='Contenedor-Ingresos'>
                         <Ingresos resultados={resultados} />
                     </section>

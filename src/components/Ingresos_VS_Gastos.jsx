@@ -17,7 +17,7 @@ function Ingresos_VS_Gastos({ resultados }) {
                 </tr>
                 <tr className='Tr-Tabla-Ingresos-VS-Gastos'>
                     <td className='Td-Tabla-Ingresos-VS-Gastos'>Gastos</td>
-                    <td className='Td-Tabla-Ingresos-VS-Gastos'>${resultados.gastos.toLocaleString()}</td>
+                    <td className='Td-Tabla-Ingresos-VS-Gastos'>${(-1*resultados.gastos).toLocaleString()}</td>
                 </tr>
                 <tr className='Tr-Tabla-Ingresos-VS-Gastos'>
                     <td className='Td-Tabla-Ingresos-VS-Gastos'>Beneficio neto</td>

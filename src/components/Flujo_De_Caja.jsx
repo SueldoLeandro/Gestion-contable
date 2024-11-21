@@ -24,7 +24,7 @@ function Flujo_De_Caja({ resultados }) {
                 </tr>
                 <tr className='Tr-Tabla-Flujo-De-Caja'>
                     <td className='Td-Tabla-Flujo-De-Caja'>Total flujo de caja</td>
-                    <td className='Td-Tabla-Flujo-De-Caja'>${resultados.totalFlujoCaja.toLocaleString()}</td>
+                    <td className='Td-Tabla-Flujo-De-Caja'>${(resultados.flujoOperativo+resultados.flujoInversion+resultados.flujoFinanciero).toLocaleString()}</td>
                 </tr>
             </tbody>
         </table>

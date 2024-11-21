@@ -33,7 +33,6 @@ function Carga_De_Asientos() {
     setArray(newArray);
   };
 
-  // Limpiar el formulario
   const handleLimpiar = () => {
     setFecha('');
     setReferencia('');
@@ -43,8 +42,18 @@ function Carga_De_Asientos() {
     setMontosHaber(['']);
   };
 
-  // Guardar el formulario
   const handleGuardar = () => {
+
+  const todosLosCamposCompletos = fecha && referencia &&
+  cuentasDebe.every(cuenta => cuenta.trim() !== '') &&
+  montosDebe.every(monto => monto.trim() !== '') &&
+  cuentasHaber.every(cuenta => cuenta.trim() !== '') &&
+  montosHaber.every(monto => monto.trim() !== '');
+
+if (!todosLosCamposCompletos) {
+  alert("Por favor, completa todos los campos antes de guardar.");
+  return;
+}
     if (window.confirm("¿Deseas guardar este asiento contable?")) {
       const detalles = [
         ...cuentasDebe.map((cuenta, index) => ({
@@ -94,6 +103,7 @@ function Carga_De_Asientos() {
                   value={fecha}
                   onChange={handleFechaChange}
                   className="input-form-fecha"
+                  required
                 />
                 <input
                   type="text"
@@ -101,6 +111,7 @@ function Carga_De_Asientos() {
                   value={referencia}
                   onChange={handleReferenciaChange}
                   className="input-form-referencia"
+                  required
                 />
               </div>
 
@@ -114,6 +125,7 @@ function Carga_De_Asientos() {
                         handleDynamicInputChange(index, e.target.value, cuentasDebe, setCuentasDebe)
                       }
                       className="input-form-debe"
+                      required
                     >
                       <option value="">Cuenta</option>
                       <option value="caja">Caja</option>
@@ -148,6 +160,7 @@ function Carga_De_Asientos() {
                         handleDynamicInputChange(index, e.target.value, cuentasHaber, setCuentasHaber)
                       }
                       className="input-form-haber"
+                      required
                     >
                       <option value="">Cuenta</option>
                       <option value="caja">Caja</option>
@@ -187,6 +200,7 @@ function Carga_De_Asientos() {
                         handleDynamicInputChange(index, e.target.value, montosDebe, setMontosDebe)
                       }
                       className="input-form-debe"
+                      required
                     />
                   ))}
                   <div className='botones-debe'>
@@ -210,6 +224,7 @@ function Carga_De_Asientos() {
                         handleDynamicInputChange(index, e.target.value, montosHaber, setMontosHaber)
                       }
                       className="input-form-haber"
+                      required
                     />
                   ))}
                 </div>

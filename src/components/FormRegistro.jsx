@@ -30,11 +30,11 @@ function FormRegistro({  formDataRegistro, handleRegisterInputChange }) {
         }
       };
 
-
-
-
 return (
     <div className='contenedor-principal'>
+       <li className='Li-boton-regresar'>
+                        <a href="Revision-De-Asientos" className='boton-regresar'>Regresar</a>
+                    </li>
       <div className="contenedor">
         <div className="formulario registro">
           <form onSubmit={handleRegisterSubmit} className='registro-form'>
@@ -70,20 +70,7 @@ return (
               <label><input className="registro-input" type="radio" name='profesion' value="contador"  onChange={handleRegisterInputChange} required />Contador</label>
             </div>
 
-
-            <div className="cuenta-con-una-cuenta">
-              <p>¿Ya tienes una cuenta? <a href="/">Inicia sesión</a></p>
-            </div>
-
-
             <button type="submit" className="registro-boton">Crear cuenta</button>
-            <p className="registro-p">o accede con</p>
-
-            <div className="registro-redes-iconos">
-              <a href="#"><i className="bx bxl-google login-redes-icono"></i></a>
-              <a href="#"><i className="bx bxl-facebook-circle login-redes-icono"></i></a>
-              <a href="#"><i className="bx bxl-instagram-alt login-redes-icono"></i></a>
-            </div>
           </form>
         </div>
         <div className="toggle-box">

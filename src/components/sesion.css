@@ -14,6 +14,7 @@
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(100deg, rgb(109, 131, 190), rgba(119, 171, 238, 0.473));
+    flex-direction: column;
 }
 
 .contenedor {
@@ -81,7 +82,7 @@
 }
 
 .login-boton {
-    background: rgb(6, 6, 68);
+    background:rgba(7, 7, 86, 0.839);
     color: rgb(225, 226, 247);
     border-radius: 8px;
     padding: 2%;
@@ -90,6 +91,10 @@
     position: relative;
     right: 0%;
     width: 30%;
+}
+
+.login-boton:hover {
+    background: rgb(6, 6, 68);
 }
 
 .login-p {
@@ -118,7 +123,6 @@
     margin-top: 3%;
 }
 
-
 .registro-input-box {
     position: relative;
     margin: 15px;
@@ -142,6 +146,31 @@
     color: #333;
 }
 
+.Li-boton-regresar {
+    color: rgba(141, 146, 248, 0.241);
+}
+
+.boton-regresar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px 16px;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 23%;
+    margin-top: 3.5%;
+    border: solid 1px rgb(204, 203, 203);
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px rgb(115, 99, 236);    
+  }
+  
+  .boton-regresar:hover {
+    background-color: #dcdffb;
+  }
+
 .input-tipo {
     justify-content: center;
     display: flex;
@@ -153,9 +182,8 @@ label {
     margin-top: -3%;
 }
 
-
 .registro-boton {
-    background: rgb(6, 6, 68);
+    background:rgba(7, 7, 86, 0.839);
     color: rgb(225, 226, 247);
     border-radius: 8px;
     padding: 1%;
@@ -166,6 +194,11 @@ label {
     margin-top: 1%;
     margin-bottom: 0.5%;
 }
+
+.registro-boton:hover {
+    background: rgb(6, 6, 68);
+}
+
 
 /*
 .registro-p {

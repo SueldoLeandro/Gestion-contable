@@ -1,68 +1,3 @@
-/*import React from 'react';
-import { useState } from 'react';
-import Navbar_Aux_Contable from './Navbar_Aux_Contable';
-import Footer from './Footer';
-
-function Carga_De_Asientos() {
-
-
-    return (
-        <>
-            <Navbar_Aux_Contable />
-            <main className='Main-Aux-Contable'>
-                <section className='Contenedor-Formulario-Carga-Asientos'>
-                    <h2 className='H2-Form-Carga-Asientos'>Carga de Asientos</h2>
-                    <form className="form-carga-asiento">
-                        <div className="form-seccion1">
-                            <div className="contenedor-fecha">
-                                <input type="text" placeholder="FECHA" className="input-form-fecha" />
-                                <input type="text" placeholder="REFERENCIA" className="input-form-referencia" />
-                            </div>
-
-                            <div className="contenedor-operaciones">
-                                <div className="operacionesDebe">
-
-                                    <input type="text" placeholder="CUENTA" className="input-form-debe" />
-
-                                    <button type="button" className="buttonDebe">Agregar Cuenta</button>
-                                </div>
-                                <div className="operacionesHaber">
-
-                                    <input type="text" placeholder="CUENTA" className="input-form-haber" />
-
-                                    <button type="button" className="buttonHaber">Agregar Cuenta</button>
-                                </div>
-                            </div>
-
-                            <div className="contenedor-valores">
-                                <div className="operacionesDebe">
-
-                                    <input type="text" placeholder="MONTO" className="input-form-debe" />
-
-                                    <button type="button" className="buttonDebe">Agregar Monto</button>
-                                </div>
-                                <div className="operacionesHaber">
-
-                                    <input type="text" placeholder="MONTO" className="input-form-haber" />
-
-                                    <button type="button" className="buttonHaber">Agregar Monto</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-seccion2">
-                            <button className="buttonGuardar">Guardar</button>
-                            <button className="buttonLimpiar">Limpiar</button>
-                        </div>
-                    </form>
-                </section>
-            </main>
-            <Footer />
-        </>
-    );
-}
-
-export default Carga_De_Asientos;*/
-
 import React, { useState } from 'react';
 import Navbar_Aux_Contable from './Navbar_Aux_Contable';
 import Footer from './Footer';
@@ -98,7 +33,6 @@ function Carga_De_Asientos() {
     setArray(newArray);
   };
 
-  // Limpiar el formulario
   const handleLimpiar = () => {
     setFecha('');
     setReferencia('');
@@ -108,8 +42,18 @@ function Carga_De_Asientos() {
     setMontosHaber(['']);
   };
 
-  // Guardar el formulario
   const handleGuardar = () => {
+
+  const todosLosCamposCompletos = fecha && referencia &&
+  cuentasDebe.every(cuenta => cuenta.trim() !== '') &&
+  montosDebe.every(monto => monto.trim() !== '') &&
+  cuentasHaber.every(cuenta => cuenta.trim() !== '') &&
+  montosHaber.every(monto => monto.trim() !== '');
+
+if (!todosLosCamposCompletos) {
+  alert("Por favor, completa todos los campos antes de guardar.");
+  return;
+}
     if (window.confirm("¿Deseas guardar este asiento contable?")) {
       const detalles = [
         ...cuentasDebe.map((cuenta, index) => ({
@@ -159,6 +103,7 @@ function Carga_De_Asientos() {
                   value={fecha}
                   onChange={handleFechaChange}
                   className="input-form-fecha"
+                  required
                 />
                 <input
                   type="text"
@@ -166,6 +111,7 @@ function Carga_De_Asientos() {
                   value={referencia}
                   onChange={handleReferenciaChange}
                   className="input-form-referencia"
+                  required
                 />
               </div>
 
@@ -179,6 +125,7 @@ function Carga_De_Asientos() {
                         handleDynamicInputChange(index, e.target.value, cuentasDebe, setCuentasDebe)
                       }
                       className="input-form-debe"
+                      required
                     >
                       <option value="">Cuenta</option>
                       <option value="caja">Caja</option>
@@ -209,6 +156,7 @@ function Carga_De_Asientos() {
                         handleDynamicInputChange(index, e.target.value, cuentasHaber, setCuentasHaber)
                       }
                       className="input-form-haber"
+                      required
                     >
                       <option value="">Cuenta</option>
                       <option value="caja">Caja</option>
@@ -244,6 +192,7 @@ function Carga_De_Asientos() {
                         handleDynamicInputChange(index, e.target.value, montosDebe, setMontosDebe)
                       }
                       className="input-form-debe"
+                      required
                     />
                   ))}
                   <div className='botones-debe'>
@@ -267,6 +216,7 @@ function Carga_De_Asientos() {
                         handleDynamicInputChange(index, e.target.value, montosHaber, setMontosHaber)
                       }
                       className="input-form-haber"
+                      required
                     />
                   ))}
                 </div>

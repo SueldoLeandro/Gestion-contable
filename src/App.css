@@ -14,6 +14,100 @@
 /*------------------AUX CONTABLE------------------*/
 /*---------------NAV AUX CONTABLE---------------*/
 
+/* Estilo del header */
+.Header-Aux-Contable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Estilo del Navbar */
+.Navbar-Aux-Contable {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.Ul-Aux-Contable {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.Li-Aux-Contable {
+  margin: 0;
+}
+
+.A-Aux-Contable {
+  text-decoration: none;
+  color: rgb(6, 6, 68);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.A-Aux-Contable:hover {
+  background-color: rgb(6, 6, 68);
+  color: #fff; 
+}
+
+/* Estilo del ícono de usuario */
+.Aux-Icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.Aux-Img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+/* Menú desplegable (oculto por defecto) */
+.Dropdown-Menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 120px;
+}
+
+.Logout-Button {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.Logout-Button:hover {
+  background-color: #f8f8f8;
+}
+
+/* Mostrar el menú cuando isMenuOpen es true */
+.Aux-Icon .Dropdown-Menu {
+  display: block;
+}
+
+
+/* ANTERIOR DISEÑO DE NAVBAR DE AUXILIAR CONTABLE!!!!!!!!!!!!!!11
 .Header-Aux-Contable{
   width: 100%;
   display: flex;
@@ -48,6 +142,8 @@
   color: black;
 }
 
+*/
+
 /*------------------MAIN AUX CONTABLE------------------*/
 
 .Main-Aux-Contable{
@@ -62,6 +158,102 @@
 
 /*------------------CONTADOR------------------*/
 /*---------------NAV CONTADOR--------------*/
+
+.Header-Contador {
+  width: 100%;
+  background-color: #f8f9fa; 
+  padding: 20px 40px; 
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 5%;
+}
+
+.Navbar-Contador {
+  flex: 1;
+  margin-left: 20px; 
+}
+
+.Ul-Contador {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; 
+  gap: 30px; 
+}
+
+.Li-Contador {
+  margin: 0;
+}
+
+.A-Contador {
+  text-decoration: none;
+  color: rgb(6, 6, 68);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.A-Contador:hover {
+  background-color: rgb(6, 6, 68);
+  color: #fff; 
+}
+
+.User-Icon {
+  position: relative; 
+  cursor: pointer;
+}
+
+.User-Img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.Dropdown-Menu {
+  width: 430%;
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 10;
+}
+
+.Logout-Button {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Logout-Button:hover {
+  background-color: rgb(6, 6, 68);
+  color: #fff;
+}
+
+.User-Icon .Dropdown-Menu {
+  display: block;
+}
+
+
+
+/* ANTERIOR DISEÑO DE NAVBAR CONTADOR !!!!!!!!!1
 
 .Header-Contador{
   width: 100%;
@@ -100,19 +292,6 @@
   box-shadow: 1px 1px 1px gray;
 }
 
-/* width: 90%;
-  min-height: 270px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  border: solid 1px rgb(204, 203, 203);
-  border-radius: 15px;
-  box-shadow: 1px 1px 1px gray;
-  margin-bottom: 10px; 
-  margin-top: 15px;
-  background-color: white;
-  align-self: center; */
-
 .Li-Contador:hover{
   background-color: rgb(171, 174, 245);
 }
@@ -140,6 +319,8 @@
   text-decoration: none;
   color: black;
 }
+
+*/
 
 /*------------------MAIN CONTADOR------------------*/
 

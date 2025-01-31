@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './sesion.css';
 import { useNavigate } from 'react-router-dom';
 
 function FormSesion({ formDataSesion, handleInputChange }) {
+
+    /* HACE QUE EL FONDO CAMBIE DE COLORES PERO ROMPE UN POCO AL INICIAR SESION
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (event) => {
+        setMousePosition({
+            x: event.clientX,
+            y: event.clientY,
+        });
+    };
+
+    useEffect(() => {
+        document.querySelector('.contenedor-principal').addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            document.querySelector('.contenedor-principal').removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
+    const calcBackgroundPosition = () => {
+        const x = mousePosition.x / window.innerWidth * 100;
+        const y = mousePosition.y / window.innerHeight * 100;
+        return `${x}% ${y}%`;
+    };
+ */
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -35,7 +60,7 @@ function FormSesion({ formDataSesion, handleInputChange }) {
       };
 
   return (
-    <div className='contenedor-principal'>
+    <div className='contenedor-principal' /* style={{ backgroundPosition: calcBackgroundPosition() }} */>
       <div className="contenedor">
         <div className="formulario login">
           <form onSubmit={handleSubmit} className='login-form'>
@@ -60,8 +85,7 @@ function FormSesion({ formDataSesion, handleInputChange }) {
 
             <div className='login-redes-iconos'>
               <a href="#"><i className="bx bxl-google login-redes-icono"></i></a>
-              <a href="#"><i className="bx bxl-facebook-circle login-redes-icono"></i></a>
-              <a href="#"><i className="bx bxl-instagram-alt login-redes-icono"></i></a>
+
             </div>
           </form>
         </div>

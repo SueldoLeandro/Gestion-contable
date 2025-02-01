@@ -14,19 +14,18 @@
 /*------------------AUX CONTABLE------------------*/
 /*---------------NAV AUX CONTABLE---------------*/
 
-/* Estilo del header */
 .Header-Aux-Contable {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px 40px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   width: 100%;
+  margin-bottom: 5%;
 }
 
-/* Estilo del Navbar */
 .Navbar-Aux-Contable {
   display: flex;
   flex-grow: 1;
@@ -42,7 +41,7 @@
 }
 
 .Li-Aux-Contable {
-  margin: 0;
+  margin-right: 90%;
 }
 
 .A-Aux-Contable {
@@ -60,7 +59,6 @@
   color: #fff; 
 }
 
-/* Estilo del ícono de usuario */
 .Aux-Icon {
   position: relative;
   cursor: pointer;
@@ -71,10 +69,8 @@
   height: 40px;
   border-radius: 50%; 
   object-fit: cover;
-  border: 2px solid #ccc;
 }
 
-/* Menú desplegable (oculto por defecto) */
 .Dropdown-Menu {
   display: none;
   position: absolute;
@@ -101,13 +97,13 @@
   background-color: #f8f8f8;
 }
 
-/* Mostrar el menú cuando isMenuOpen es true */
 .Aux-Icon .Dropdown-Menu {
   display: block;
 }
 
 
 /* ANTERIOR DISEÑO DE NAVBAR DE AUXILIAR CONTABLE!!!!!!!!!!!!!!11
+
 .Header-Aux-Contable{
   width: 100%;
   display: flex;

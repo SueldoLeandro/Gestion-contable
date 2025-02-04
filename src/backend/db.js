@@ -2,7 +2,7 @@
 import { Sequelize } from 'sequelize';
 
 // Configuración de la conexión
-const db = new Sequelize('portalcontable', 'root', 'root', {
+const db = new Sequelize('portalcontable', 'root', '', {
   host: 'localhost',
   dialect: 'mariadb',
   dialectOptions: {

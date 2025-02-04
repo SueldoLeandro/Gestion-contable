@@ -109,7 +109,8 @@ const costosBienesVendidos = await calcularSumaPorCuenta('inventario');
 const sueldosSalarios = await calcularSumaPorCuenta('salarios por pagar');
 const gastosOperativos = await calcularSumaPorCuenta('proveedores');
 const otrosGastos = await calcularSumaPorCuenta('prov gastos');
-const flujoOperativo = await calcularSumaPorCuenta('proveedores');
+//const flujoOperativo = await calcularSumaPorCuenta('proveedores');
+const flujoOperativo = ventaProductos + serviciosPrestados + costosBienesVendidos + sueldosSalarios + gastosOperativos;
 const flujoInversion = await calcularSumaPorCuenta('inversiones CP');
 const flujoFinanciero = await calcularSumaPorCuenta('prestamo bancario');
       // Enviar los resultados al frontend
@@ -128,7 +129,7 @@ const flujoFinanciero = await calcularSumaPorCuenta('prestamo bancario');
         sueldosSalarios:sueldosSalarios,
         gastosOperativos:gastosOperativos,
         otrosGastos:otrosGastos,
-        flujoOperativo:flujoOperativo,
+        flujoOperativo: flujoOperativo,
         flujoInversion:flujoInversion,
         flujoFinanciero:flujoFinanciero,
       });

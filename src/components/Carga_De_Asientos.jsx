@@ -131,13 +131,17 @@ if (!todosLosCamposCompletos) {
                       <option value="caja">Caja</option>
                       <option value="banco CC">Banco</option>
                       <option value="inventario">Inventario</option>
+                      <option value="salarios por pagar">Salarios por pagar</option>
+                      <option value="proveedores">Proveedores</option>
+                      <option value="prestamo bancario">Préstamo bancario</option>
+
+                      {/*
                       <option value="cuentas por cobrar">Cuentas por cobrar</option>
                       <option value="CPC servicios">CPC servicios</option>
                       <option value="inversiones CP">Inversiones CP</option>
-                      <option value="proveedores">Proveedores</option>
-                      <option value="salarios por pagar">Salarios por pagar</option>
-                      <option value="prestamo bancario">Préstamo bancario</option>{/*
                       <option value="prov gastos">Prov. gastos</option>*/}
+                      
+                      
                     </select>
                   ))}
                   
@@ -163,15 +167,18 @@ if (!todosLosCamposCompletos) {
                       required
                     >
                       <option value="">Cuenta</option>
-                      <option value="caja">Caja</option>
-                      <option value="banco CC">Banco</option>
-                      <option value="inventario">Inventario</option>
                       <option value="cuentas por cobrar">Cuentas por cobrar</option>
                       <option value="CPC servicios">CPC servicios</option>
                       <option value="inversiones CP">Inversiones CP</option>
+                      <option value="caja">Caja</option>
+                      <option value="banco CC">Banco</option>
+
+
+                      {/*
+                      <option value="inventario">Inventario</option>
                       <option value="proveedores">Proveedores</option>
                       <option value="salarios por pagar">Salarios por pagar</option>
-                      <option value="prestamo bancario">Préstamo bancario</option>{/*
+                      <option value="prestamo bancario">Préstamo bancario</option>
                       <option value="prov gastos">Prov. gastos</option>*/}
                     </select>
                   ))}

@@ -846,3 +846,17 @@
   color: white;
   cursor: pointer;
 }
+/*------------------notificacionnn------------------*/
+.notification {
+  padding: 10px;
+  background-color: #ffcccb;
+  border: 1px solid #ff6666;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.resaltar-diferencia {
+  background-color: #ffcccc; 
+  border: 1px solid #ff6666; 
+}

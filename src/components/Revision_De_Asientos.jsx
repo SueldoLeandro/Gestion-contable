@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar_Contador from './Navbar_Contador';
 import Footer from './Footer';
 
@@ -8,6 +8,8 @@ function Revision_De_Asientos() {
     const [subtotalDebe, setSubtotalDebe] = useState(0);
     const [subtotalHaber, setSubtotalHaber] = useState(0);
     const [notification, setNotification] = useState(null);
+    const [searchFecha, setSearchFecha] = useState('');
+    const [searchAsiento, setSearchAsiento] = useState('');
 
     const fetchAsientos = async () => {
         try {
@@ -22,7 +24,7 @@ function Revision_De_Asientos() {
                         nombre_cuenta: nombre,
                         monto: parseFloat(asiento.montos_debe.split(',')[index]).toFixed(2)
                     }))
-                    : [];
+                    : [];  
                 const haber = asiento.cuentas_acreditadas
                     ? asiento.cuentas_acreditadas.split(',').map((nombre, index) => ({
                         nombre_cuenta: nombre,
@@ -30,24 +32,20 @@ function Revision_De_Asientos() {
                     }))
                     : [];
 
-                // Calcular totales de debe y haber para este asiento
                 const totalDebe = debe.reduce((acc, item) => acc + parseFloat(item.monto), 0);
                 const totalHaber = haber.reduce((acc, item) => acc + parseFloat(item.monto), 0);
-
-                // Verificar si hay diferencia en este asiento
                 const tieneDiferencia = totalDebe !== totalHaber;
 
                 return {
                     ...asiento,
                     debe,
                     haber,
-                    tieneDiferencia, // Agregar flag para identificar asientos con diferencia
+                    tieneDiferencia,
                 };
             });
 
             setAsientos(processedData);
 
-            // Calcular subtotales generales
             const totalDebe = processedData.reduce((acc, asiento) => {
                 return acc + asiento.debe.reduce((subAcc, item) => subAcc + parseFloat(item.monto), 0);
             }, 0);
@@ -59,11 +57,9 @@ function Revision_De_Asientos() {
             setSubtotalDebe(totalDebe.toFixed(2));
             setSubtotalHaber(totalHaber.toFixed(2));
 
-            // Verificar si hay diferencia en los subtotales generales
             if (totalDebe !== totalHaber) {
                 setNotification('¡Atención! Hay una diferencia entre el subtotal del debe y el haber.');
             }
-
         } catch (error) {
             console.error("Error al cargar los asientos:", error);
             setAsientos([]);
@@ -76,51 +72,69 @@ function Revision_De_Asientos() {
         fetchAsientos();
     }, []);
 
+    const filteredAsientos = asientos.filter(asiento => 
+        (searchFecha === '' || asiento.fecha.includes(searchFecha)) &&
+        (searchAsiento === '' || asiento.ID_asiento.toString().includes(searchAsiento))
+    );
+
     return (
         <>
             <Navbar_Contador onNavClick={fetchAsientos} />
             <main className='Main-Contador'>
                 <section className='Contenedor-Revision-Asientos'>
+                    <div className='buscador'> <h3> Buscador </h3>
+                        <input 
+                            type='date' 
+                            value={searchFecha} 
+                            onChange={(e) => setSearchFecha(e.target.value)} 
+                            placeholder='Buscar por fecha' 
+                        />
+                        <input 
+                            type='number' 
+                            value={searchAsiento} 
+                            onChange={(e) => setSearchAsiento(e.target.value)} 
+                            placeholder='Buscar Nro de Asiento' 
+                        />
+                    </div>
                     {loading ? (
                         <p>Cargando asientos...</p>
-                    ) : asientos.length > 0 ? (
+                    ) : filteredAsientos.length > 0 ? (
                         <>
                             {notification && <div className="notification">{notification}</div>}
                             <table className='Tabla-Revision-Asientos'>
                                 <thead className='Cabecera-Tabla-Revision-Asientos'>
                                     <tr className='Tr-Tabla-Revision-Asientos'>
-                                        <th className='Th-Tabla-Revision-Asientos'>N° Asiento</th>
-                                        <th className='Th-Tabla-Revision-Asientos'>Fecha</th>
-                                        <th className='Th-Tabla-Revision-Asientos'>Descripción</th>
-                                        <th className='Th-Tabla-Revision-Asientos'>Cuenta debitada</th>
-                                        <th className='Th-Tabla-Revision-Asientos'>Debe</th>
-                                        <th className='Th-Tabla-Revision-Asientos'>Cuenta acreditada</th>
-                                        <th className='Th-Tabla-Revision-Asientos'>Haber</th>
+                                        <th>N° Asiento</th>
+                                        <th>Fecha</th>
+                                        <th>Descripción</th>
+                                        <th>Cuenta debitada</th>
+                                        <th>Debe</th>
+                                        <th>Cuenta acreditada</th>
+                                        <th>Haber</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
-                                    {asientos.map(asiento => (
+                                    {filteredAsientos.map(asiento => (
                                         <tr className='Tr-Tabla-Revision-Asientos' key={asiento.ID_asiento}>
-                                            <td className='Td-Tabla-Revision-Asientos'>{asiento.ID_asiento}</td>
-                                            <td className='Td-Tabla-Revision-Asientos'>{asiento.fecha}</td>
-                                            <td className='Td-Tabla-Revision-Asientos'>{asiento.descripcion}</td>
-                                            <td className='Td-Tabla-Revision-Asientos'>
+                                            <td>{asiento.ID_asiento}</td>
+                                            <td>{asiento.fecha}</td>
+                                            <td>{asiento.descripcion}</td>
+                                            <td>
                                                 {asiento.debe.map((debe, index) => (
                                                     <p key={index}>{debe.nombre_cuenta}</p>
                                                 ))}
                                             </td>
-                                            <td className={`Td-Tabla-Revision-Asientos ${asiento.tieneDiferencia ? 'resaltar-diferencia' : ''}`}>
+                                            <td className={asiento.tieneDiferencia ? 'resaltar-diferencia' : ''}>
                                                 {asiento.debe.map((debe, index) => (
                                                     <p key={index}>${debe.monto}</p>
                                                 ))}
                                             </td>
-                                            <td className='Td-Tabla-Revision-Asientos'>
+                                            <td>
                                                 {asiento.haber.map((haber, index) => (
                                                     <p key={index}>{haber.nombre_cuenta}</p>
                                                 ))}
                                             </td>
-                                            <td className={`Td-Tabla-Revision-Asientos ${asiento.tieneDiferencia ? 'resaltar-diferencia' : ''}`}>
+                                            <td className={asiento.tieneDiferencia ? 'resaltar-diferencia' : ''}>
                                                 {asiento.haber.map((haber, index) => (
                                                     <p key={index}>${haber.monto}</p>
                                                 ))}
@@ -129,7 +143,6 @@ function Revision_De_Asientos() {
                                     ))}
                                 </tbody>
                             </table>
-
                             <div className='subtotales'>
                                 <p>Subtotal debe: ${subtotalDebe}</p>
                                 <p>Subtotal haber: ${subtotalHaber}</p>

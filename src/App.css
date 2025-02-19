@@ -151,6 +151,17 @@
   border-radius: 20px;
 }
 
+.contenedor-carga-documento{
+  width: 100%;
+  display: flex;
+}
+
+.contenedor-carga-documento > input{
+  width: 30%;
+  justify-content: flex-start;
+  margin-left: 50px;
+}
+
 
 /*------------------CONTADOR------------------*/
 /*---------------NAV CONTADOR--------------*/

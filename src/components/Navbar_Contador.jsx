@@ -37,6 +37,9 @@ function Navbar_Contador({ onNavClick }) {
                     <li className='Li-Contador'>
                         <a href="./registro" className='A-Contador'>Registro</a>
                     </li>
+                    <li className='Li-Contador'>
+                        <a href="./Modificar-Usuarios" className='A-Contador'>Modificar Usuarios</a>
+                    </li>
                 </ul>
             </nav>
             <div className="User-Icon" onClick={toggleMenu} ref={menuRef}>

@@ -29,7 +29,7 @@ function Activo() {
                 <tr className='Tr-Tabla-Activo'>
                     <td className='Td-Tabla-Activo'>Total Activos</td>
                     <td className='Td-Tabla-Activo'>
-                        {activos !== null && activos !== undefined ? `$ ${(-1*activos).toFixed(2)}` : 'Cargando...'}
+                        {activos !== null && activos !== undefined ? `$ ${(activos).toFixed(2)}` : 'Cargando...'}
                     </td>
                 </tr>
             </tbody>

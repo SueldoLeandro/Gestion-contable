@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
 <footer className='Footer-Administracion'>
-    <p>Todos los derechos reservados © Portal Contable S.R.L.</p>
+    <p> Portal Contable S.R.L. © 2025 Todos los derechos reservados. </p>
 
 </footer>
   );

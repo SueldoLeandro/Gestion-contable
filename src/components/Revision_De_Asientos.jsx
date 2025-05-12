@@ -79,6 +79,7 @@ function Revision_De_Asientos() {
 
     return (
         <>
+        <div id="root" className="revision-de-asientos">
             <Navbar_Contador onNavClick={fetchAsientos} />
             <main className='Main-Contador'>
                 <section className='Contenedor-Revision-Asientos'>
@@ -103,7 +104,7 @@ function Revision_De_Asientos() {
                             {notification && <div className="notification">{notification}</div>}
                             <table className='Tabla-Revision-Asientos'>
                                 <thead className='Cabecera-Tabla-Revision-Asientos'>
-                                    <tr className='Tr-Tabla-Revision-Asientos'>
+                                    <tr className='Cabecera-Tabla'>
                                         <th>N° Asiento</th>
                                         <th>Fecha</th>
                                         <th>Descripción</th>
@@ -154,6 +155,7 @@ function Revision_De_Asientos() {
                 </section>
             </main>
             <Footer />
+            </div>
         </>
     );
 }

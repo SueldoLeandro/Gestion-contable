@@ -333,12 +333,13 @@ if (!todosLosCamposCompletos) {
 
   return (
     <>
+    <div id="root" className="revision-de-asientos">
       <Navbar_Aux_Contable />
       <main className="Main-Aux-Contable">
         <section className="Contenedor-Formulario-Carga-Asientos">
           <h2 className="H2-Form-Carga-Asientos">Carga de Asientos</h2>
           <div className='contenedor-carga-documento'>
-            <input type="file" onChange={handleDocument} className="buttonGuardar" />
+            <input type="file" onChange={handleDocument} className="buttonDoc" />
             </div>
           <form className="form-carga-asiento">
             <div className="form-seccion1">
@@ -361,6 +362,10 @@ if (!todosLosCamposCompletos) {
               </div>
 
               <div className="contenedor-operaciones">
+                <div className='tipo-cuenta'>
+                <p>Debe</p> <p>Haber</p>
+                </div>
+
                 <div className="operacionesDebe">
                   {cuentasDebe.map((cuenta, index) => (
                     <select
@@ -441,6 +446,9 @@ if (!todosLosCamposCompletos) {
               </div>
 
               <div className="contenedor-valores">
+              <div className='tipo-cuenta'>
+                <p>Debe</p> <p>Haber</p>
+                </div>
                 <div className="operacionesDebe">
                   {montosDebe.map((monto, index) => (
                     <input
@@ -506,6 +514,7 @@ if (!todosLosCamposCompletos) {
         </section>
       </main>
       <Footer />
+      </div>
     </>
   );
 }

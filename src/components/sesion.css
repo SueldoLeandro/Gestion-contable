@@ -24,12 +24,12 @@
 
 .contenedor {
     position: relative;
-    width: 850px;
-    height: 550px;
+    width: 55%;
+    height: 70%;
     background: #fff;
-    border-radius: 30px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    border-radius: 50px 0px 50px 0px;
     margin: 20px;
+    justify-content: space-between;
 }
 
 .formulario{
@@ -38,88 +38,22 @@
     width: 50%;
     height: 100%;
     background: rgb(206, 208, 247);
-    display: flex;
     align-items: center;
     text-align: center;
     color: rgb(6, 6, 68);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 0px 0px 50px 0px;
 }
 
 .input-box {
     margin: 5%;
 }
 
-/* ------------------------------------- Formulario Login */
-.login-form {
-    width: 100%;
-    margin: 50;
-}
-
-.login-title {
-    font-size: 40px;
-    margin: -10px 0;
-}
-
-.login-input-box {
-    position: relative;
-    margin: 15px;
-}
-
-.login-input {
-    width: 100%;
-    padding: 13px;
-    background: aliceblue;
-    border-radius: 10px;
-    border-color: aliceblue;
-    outline: none;
-    margin-top: 5;
-}
-
-.login-olvido-contraseña {
-    text-align: left;
-    padding-bottom: 10%;
-    margin-top: -3%;
-    margin-left: 15px;
-    font-size: 14.5;
-    color: #333;
-    text-decoration: none;
-}
-
-.login-boton {
-    background:rgba(7, 7, 86, 0.839);
-    color: rgb(225, 226, 247);
-    border-radius: 8px;
-    padding: 2%;
-    margin: 2%;
-    margin-bottom: 20px;
-    position: relative;
-    right: 0%;
-    width: 30%;
-}
-
-.login-boton:hover {
-    background: rgb(6, 6, 68);
-}
-
-.login-p {
-    margin: 0;
-}
-
-.login-redes-iconos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-redes-icono {
-    margin: 0 10px;
-}
-
 /* -------------------------------------- Formulario Registro */
 .registro-form {
-    width: 100%;
-    margin: 50;
+    width: 100%; 
+    padding: 5%;
+    position: relative;
+    margin-top: 2%;
 }
 
 .registro-title {
@@ -169,7 +103,9 @@
     margin-top: 3.5%;
     border: solid 1px rgb(204, 203, 203);
     border-radius: 15px;
-    box-shadow: 1px 1px 1px rgb(115, 99, 236);    
+    box-shadow: 1px 1px 1px rgb(115, 99, 236);   
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; 
   }
   
   .boton-regresar:hover {
@@ -191,38 +127,13 @@ label {
     background:rgba(7, 7, 86, 0.839);
     color: rgb(225, 226, 247);
     border-radius: 8px;
-    padding: 1%;
-    margin-bottom: 20px;
-    position: relative;
-    right: 0%;
-    width: 30%;
-    margin-top: 1%;
-    margin-bottom: 0.5%;
+    width: 40%;
+    height: 8%;
 }
 
 .registro-boton:hover {
     background: rgb(6, 6, 68);
 }
-
-
-/*
-.registro-p {
-    margin: 0;
-}
-
-.registro-redes-iconos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.registro-redes-icono {
-    margin: 0 10px;
-}
-
-.formulario.registro {
-    visibility: visible;
-} */
 
 .toggle-panel img{
     opacity: 90%;
@@ -243,23 +154,4 @@ label {
     z-index: 2;
     margin-top: 7%;
     font-size: 90%;
-}
-
-.google-login-btn {
-    background:rgba(7, 7, 86, 0.839);
-    color: rgb(225, 226, 247);
-    border-radius: 8px;
-    padding: 2%;
-    margin: 2%;
-    position: relative;
-    right: 0%;
-    width: 30%;
-  }
-  
-  .google-login-btn i {
-    font-size: 20px;
-  }
-
-  .google-login-btn:hover {
-    background: rgb(6, 6, 68);
 }

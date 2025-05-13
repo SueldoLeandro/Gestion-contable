@@ -91,6 +91,7 @@ function Resumen_Financiero() {
 
     return (
         <>
+        <div id="root" className="revision-de-asientos">
             <Navbar_Contador />
             <main className='Main-Contador'>
                 <section className='Contenedor-Resumen-Financiero'>
@@ -124,6 +125,7 @@ function Resumen_Financiero() {
                 Imprimir
             </button>
             <Footer />
+            </div>
         </>
     );
 }

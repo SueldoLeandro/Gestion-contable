@@ -1,72 +1,69 @@
-import React, { useState, useEffect } from 'react';
-import './sesion.css';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./Inicio.css";
+import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
+import Swal from "sweetalert2";
 
 function FormSesion({ formDataSesion, handleInputChange }) {
+  const navigate = useNavigate();
 
-    /* HACE QUE EL FONDO CAMBIE DE COLORES PERO ROMPE UN POCO AL INICIAR SESION
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formDataSesion),
+    });
 
-    const handleMouseMove = (event) => {
-        setMousePosition({
-            x: event.clientX,
-            y: event.clientY,
-        });
-    };
+    const data = await response.json();
+    if (response.ok) {
+      Swal.fire({
+        icon: "success",
+        title: "¡Éxito!",
+        text: data.mensaje,
+      });
 
-    useEffect(() => {
-        document.querySelector('.contenedor-principal').addEventListener('mousemove', handleMouseMove);
+      if (data.usuario.tipo === "auxiliar_contable") {
+        navigate("/Carga-De-Asientos");
+      } else if (data.usuario.tipo === "contador") {
+        navigate("/Revision-De-Asientos");
+      }
 
-        return () => {
-            document.querySelector('.contenedor-principal').removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []);
-
-    const calcBackgroundPosition = () => {
-        const x = mousePosition.x / window.innerWidth * 100;
-        const y = mousePosition.y / window.innerHeight * 100;
-        return `${x}% ${y}%`;
-    };
- */
-    const navigate = useNavigate();
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        // fetch para iniciar sesion
-        try {
-          const response = await fetch('http://localhost:5000/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formDataSesion),
-          });
-    
-          const data = await response.json();
-          if (response.ok) {
-            alert(data.mensaje);
-            // Redireccionar según el tipo de usuario
-            if (data.usuario.tipo === 'auxiliar_contable') {
-                navigate('/Carga-De-Asientos');
-            } else if (data.usuario.tipo === 'contador') {
-                navigate('/Revision-De-Asientos');
-            }
-          } else {
-            alert(data.mensaje);
-          }
-        } catch (error) {
-          console.error('Error en el inicio de sesión:', error);
-        }
-      };
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: data.mensaje,
+      });
+    }
+  } catch (error) {
+    console.error("Error en el inicio de sesión:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Error al conectar con el servidor",
+    });
+  }
+};
 
   return (
-    <div className='contenedor-principal' /* style={{ backgroundPosition: calcBackgroundPosition() }} */>
-      <div className="contenedor">
-        <div className="formulario login">
-          <form onSubmit={handleSubmit} className='login-form'>
-            <h1 className="login-title">Iniciar sesión</h1>
-
-            <div className="input-box">
+    <div className="App">
+      <Header />
+      <Hero />
+      <Servicios />
+      <section id="formularioInicio" className="formularioInicio">
+        <div className="login_izq">
+        <img id="logo_login" src="/images/portal.png" alt="inicio"/>
+        <h1> ¡Bienvenido de vuelta!</h1>
+            <p>¿Qué tenemos pendiente hoy?</p>
+        </div>
+        <div className="form-inicio">
+          <form onSubmit={handleSubmit}>
+          <h3>Iniciar Sesión</h3>
+          <div className="input-box">
               <i className="bx bxs-user-circle"></i>
               <input className="login-input" type="text" placeholder="Usuario" name='usuario' value={formDataSesion.usuario} onChange={handleInputChange} required />
             </div>
@@ -81,24 +78,111 @@ function FormSesion({ formDataSesion, handleInputChange }) {
             </div>
 
             <button type="submit" className="login-boton">Iniciar</button>
-            <p className="login-p">o accede con</p>
 
-            <div className='login-redes-iconos'>
-              <a href="#"><i className="bx bxl-google login-redes-icono"></i></a>
-
-            </div>
           </form>
         </div>
-        <div className="toggle-box">
-          <div className="toggle-panel">
-            <h1> ¡Bienvenido de vuelta!</h1>
-            <p>¿Qué tenemos pendiente hoy?</p>
-            <img src="/images/portal.png" alt="inicio"/>
-
-          </div>
-        </div>
-      </div>
+      </section>
+      <Nosotros/>
+      <Footer />
     </div>
   );
-};
+}
+
+const Header = () => (
+  <header className="header">
+    <div className="container">
+      <div className="Logo_inicio">
+        <img
+          id="logo_header"
+          src="/images/portal_sin_letra.png"
+          alt="logo_header"
+        />
+        <h1 className="Portal">Portal Contable</h1>
+      </div>
+      <nav className="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#formularioInicio">Comenzar</a>
+      </nav>
+    </div>
+  </header>
+);
+
+const Hero = () => (
+  <section id="inicio" className="hero">
+    <div className="hero-content">
+      <h2>Contabilidad y Comodidad en un solo lugar</h2>
+      <p>
+        En Portal Contable, mantené tu negocio en orden y crecimiento constante.
+      </p>
+      <a href="#servicios" className="hero-button">
+        Conocé más
+      </a>
+    </div>
+  </section>
+);
+
+const Servicios = () => (
+  <section id="servicios" className="servicios">
+    <h3>Nuestros Servicios</h3>
+    <div className="servicios-grid">
+      <div className="hojas-de-calculo">
+        <h4>Confección de Hojas de Cálculo</h4>
+        <p>
+          Olvidate de las hojas de cálculo manuales. Digitalizá y modernizá la gestión de tu empresa con nuestras soluciones avanzadas.
+        </p>
+      </div>
+
+      <div className="hojas-de-calculo">
+        <h4>IA Implementada</h4>
+        <p>
+          Automatizá tus procesos con nuestro sistema de captura de datos para facturas, impulsado por inteligencia artificial con una precisión del 98%.
+        </p>
+      </div>
+    </div>
+
+    <div className="servicios-grid">
+      <div className="hojas-de-calculo">
+        <h4>Acceso desde Cualquier Lugar</h4>
+        <p>
+          Trabajá desde donde quieras. Nuestra aplicación web te permite acceder desde cualquier dispositivo portátil o móvil.
+        </p>
+      </div>
+
+      <div className="hojas-de-calculo">
+        <h4>Sin Costos Iniciales</h4>
+        <p>
+          ¡Empezá a trabajar con nosotros sin costo alguno! Esta oferta es válida para todos los nuevos usuarios a partir de los 30 dias.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+const Nosotros = () => (
+  <section id="nosotros" className="nosotros">
+    <h3>¿Quiénes somos?</h3>
+    <div className="quienes-somos">
+      <img src="/images/tablet.jpg" alt="tablet" />
+      <p>
+      Somos un equipo de profesionales apasionados por la contabilidad y la tecnología.
+Nuestro objetivo es simplificar la gestión contable de tu negocio, brindándote herramientas innovadoras y un servicio excepcional.
+<br />En Portal Contable, combinamos la precisión del mundo financiero con el dinamismo del desarrollo web para ofrecerte una plataforma segura, funcional y en constante evolución. <br />Nuestro equipo está conformado por programadores especializados en tecnologías web modernas, expertos en usabilidad, diseño responsivo y ciberseguridad, quienes trabajan en conjunto con contadores y asesores financieros para garantizar que cada herramienta cumpla con los más altos estándares de calidad y utilidad práctica.    </p>
+    </div>
+
+    <div className="quienes-somos-2">
+      <p>Además, creemos en la mejora continua. Por eso, escuchamos a nuestros usuarios, analizamos sus comentarios y desarrollamos nuevas funcionalidades que se adapten a sus retos cotidianos. Nuestro compromiso es que el Portal Contable no sea solo una herramienta, sino un aliado estratégico en el crecimiento de tu empresa.
+
+<br />Contá con nosotros para llevar la contabilidad de tu negocio al siguiente nivel, respaldado por un equipo que entiende tanto de números como de código. 
+<br /> Muchas gracias por llegar hasta aquí y por confiar en nosotros, estamos aquí para ayudarte a alcanzar tus metas financieras y empresariales. 
+
+</p>
+      <img src="/images/xd_inicio.jpg" alt="" />
+    </div>
+  </section>
+);
+
+<Footer />;
+
 export default FormSesion;

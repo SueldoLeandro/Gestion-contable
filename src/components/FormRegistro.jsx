@@ -31,6 +31,7 @@ function FormRegistro({  formDataRegistro, handleRegisterInputChange }) {
       };
 
 return (
+  <div id="root" className="revision-de-asientos">
     <div className='contenedor-principal'>
        <li className='Li-boton-regresar'>
                         <a href="Revision-De-Asientos" className='boton-regresar'>Regresar</a>
@@ -82,6 +83,7 @@ return (
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

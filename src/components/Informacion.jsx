@@ -62,6 +62,7 @@ function Revision_De_Asientos() {
 
     return (
         <>
+        <div id="root" className="revision-de-asientos">
             <Navbar_Contador />
             <main className='Main-Contador'>
                 <section className='Contenedor-Informacion'>
@@ -95,6 +96,7 @@ function Revision_De_Asientos() {
                 Imprimir
             </button>
             <Footer />
+            </div>
         </>
     );
 }

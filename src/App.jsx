@@ -7,6 +7,7 @@ import Carga_De_Asientos from './components/Carga_De_Asientos';
 import Revision_De_Asientos from './components/Revision_De_Asientos';
 import Informacion from './components/Informacion';
 import Resumen_Financiero from './components/Resumen_Financiero';
+import Modificar_Usuarios from './components/Modificar_Usuarios'
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
       [name]: value
     });
   };
-console.log(formDataSesion)
+  console.log(formDataSesion)
 
   // Estado inicial para el formulario de registro
   const [formDataRegistro, setFormDataRegistro] = useState({
@@ -33,7 +34,7 @@ console.log(formDataSesion)
     password: '',
     profesion: ''
   });
-  
+
   // Manejador de cambios para el formulario de registro
   const handleRegisterInputChange = (e) => {
     const { name, value } = e.target;
@@ -84,6 +85,10 @@ console.log(formDataSesion)
           <Route
             path="/Resumen-Financiero"
             element={<Resumen_Financiero />} />
+
+          <Route
+            path="/Modificar-Usuarios"
+            element={<Modificar_Usuarios />} />
         </Routes>
       </BrowserRouter>
     </>

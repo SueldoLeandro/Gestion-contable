@@ -932,3 +932,125 @@
       max-width: 300px;
   }
 }
+
+
+
+
+/*---------MODIFICAR USUARIOS----------*/
+
+/* Estilos para la tabla */
+.Contenedor-Mod-Usu{
+    width: 100%;
+    color:rgb(6, 6, 68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    flex-direction: column;
+    min-height: 100px;
+}
+
+.Modificar-Usu-Table{
+  border-collapse: collapse;
+  width: 95%;
+  border: 2px solid rgb(13, 13, 123);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: larger;
+  border-spacing: 10px;
+  min-height: 50px;
+}
+
+.Modificar-Usu-Table > th{
+  padding: 7px;
+  background-color: rgb(206, 208, 247);
+}
+
+.Modificar-Usu-Table > th, td {
+  text-align: left;
+  border-bottom: 1px solid rgb(13, 13, 123);
+  border-right: 1px solid rgb(13, 13, 123);
+  padding: 7px;
+}
+
+/* Botones de acción */
+.btn-contenedor > button {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-contenedor:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-contenedor:last-child {
+  color: white;
+}
+
+/* Animación para desplegar el formulario */
+.formulario-modificar {
+  min-height: 200px;
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Cuando el formulario está activo */
+tr.formulario-activo .formulario-modificar {
+  display: block;
+  opacity: 1;
+  max-height: 900px; /* Ajusta según necesidad */
+}
+
+/* Estilos del formulario */
+.Modificar-Usu-Form{
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.Modificar-Usu-Form > label {
+  
+  display: flex;
+  font-size: 16px; /* Aumenta el tamaño de la fuente del label */
+  margin-bottom: 10px; /* Agrega espacio debajo del label */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 30px;
+  align-items: center;
+  
+}
+.Modificar-Usu-Form > input {
+  margin-left: 20px;
+  font-size: 15px;
+}
+.Modificar-Usu-Form input,
+.Modificar-Usu-Form select {
+  width: 80%; /* Hace que los inputs ocupen todo el ancho disponible */
+  padding: 10px; /* Agrega espacio interno para hacerlo más grande */
+  font-size: 18px; /* Aumenta el tamaño de la fuente */
+  margin-left: 20px;
+}
+
+.Modificar-Usu-Form > button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.Modificar-Usu-Form > button:hover{
+  cursor: pointer;
+  scale: 1.2;
+} 

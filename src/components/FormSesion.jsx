@@ -74,7 +74,7 @@ const handleSubmit = async (e) => {
             </div>
 
             <div className="olvido-contraseña">
-              <a href="#">¿Olvidó su contraseña?</a>
+              {/*<a href="#">¿Olvidó su contraseña?</a>*/}
             </div>
 
             <button type="submit" className="login-boton">Iniciar</button>
@@ -130,14 +130,14 @@ const Servicios = () => (
       <div className="hojas-de-calculo">
         <h4>Confección de Hojas de Cálculo</h4>
         <p>
-          Olvidate de las hojas de cálculo manuales. Digitalizá y modernizá la gestión de tu empresa con nuestras soluciones avanzadas.
+          En JMV ingenieria SRL digitalizamos y automatizamos las hojas de calculos manuales.
         </p>
       </div>
 
       <div className="hojas-de-calculo">
-        <h4>IA Implementada</h4>
+        <h4>Análisis inteligente</h4>
         <p>
-          Automatizá tus procesos con nuestro sistema de captura de datos para facturas, impulsado por inteligencia artificial con una precisión del 98%.
+          Automatizámos los procesos con nuestro sistema de captura de datos para facturas, impulsado por un analisis inteligente de archivos PDF con una precisión del 98%.
         </p>
       </div>
     </div>
@@ -146,14 +146,14 @@ const Servicios = () => (
       <div className="hojas-de-calculo">
         <h4>Acceso desde Cualquier Lugar</h4>
         <p>
-          Trabajá desde donde quieras. Nuestra aplicación web te permite acceder desde cualquier dispositivo portátil o móvil.
+          Trabajo remoto. La APP web permite al personal de la empresa acceder desde cualquier PC o notebook de forma remota.
         </p>
       </div>
 
       <div className="hojas-de-calculo">
-        <h4>Sin Costos Iniciales</h4>
+        <h4>Control de datos</h4>
         <p>
-          ¡Empezá a trabajar con nosotros sin costo alguno! Esta oferta es válida para todos los nuevos usuarios a partir de los 30 dias.
+          Con esta herramienta la empresa mejoró el control del registro de cuentas, ingresos y egresos, con el historial de asientos contable y las tablas de flujo de caja.
         </p>
       </div>
     </div>
@@ -166,11 +166,10 @@ const Nosotros = () => (
     <div className="quienes-somos">
       <img src="/images/tablet.jpg" alt="tablet" />
       <p>
-      Somos un equipo de profesionales apasionados por la contabilidad y la tecnología.
-Nuestro objetivo es simplificar la gestión contable de tu negocio, brindándote herramientas innovadoras y un servicio excepcional.
-<br />En Portal Contable, combinamos la precisión del mundo financiero con el dinamismo del desarrollo web para ofrecerte una plataforma segura, funcional y en constante evolución. <br />Nuestro equipo está conformado por programadores especializados en tecnologías web modernas, expertos en usabilidad, diseño responsivo y ciberseguridad, quienes trabajan en conjunto con contadores y asesores financieros para garantizar que cada herramienta cumpla con los más altos estándares de calidad y utilidad práctica.    </p>
+      Somos un equipo de profesionales apasionados por la contabilidad y la tecnología. Nuestro objetivo es simplificar la gestión contable de la empresa, brindándo herramientas innovadoras y un servicio excepcional.
+<br />En Portal Contable, combinamos la precisión del mundo financiero con el dinamismo del desarrollo web para ofrecer una plataforma segura, funcional y en constante evolución. <br />Nuestro equipo está conformado por programadores especializados en tecnologías web modernas, expertos en usabilidad, diseño responsivo y ciberseguridad, quienes trabajan en conjunto con contadores y asesores financieros de JMV para garantizar que cada herramienta cumpla con los más altos estándares de calidad y utilidad práctica.    </p>
     </div>
-
+{/*
     <div className="quienes-somos-2">
       <p>Además, creemos en la mejora continua. Por eso, escuchamos a nuestros usuarios, analizamos sus comentarios y desarrollamos nuevas funcionalidades que se adapten a sus retos cotidianos. Nuestro compromiso es que el Portal Contable no sea solo una herramienta, sino un aliado estratégico en el crecimiento de tu empresa.
 
@@ -179,7 +178,7 @@ Nuestro objetivo es simplificar la gestión contable de tu negocio, brindándote
 
 </p>
       <img src="/images/xd_inicio.jpg" alt="" />
-    </div>
+    </div>*/}
   </section>
 );
 
